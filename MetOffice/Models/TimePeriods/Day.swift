@@ -99,48 +99,48 @@ class Day: NSObject, NSCoding {
 }
 
 class DayViewModel {
-    private var day: Day?
+    private var day: Day
     
     init(day: Day) {
         self.day = day
     }
     
     var dayWeatherType: String {
-        return day!.dayWeatherType != nil ? "\(day!.dayWeatherType!)" : "-"
+        return day.dayWeatherType != nil ? "\(day.dayWeatherType!)" : "-"
     }
     
     var dayActual: String {
-        return day!.dayActualTemp != nil ? "\(Int(day!.dayActualTemp!))°C" : "-"
+        return day.dayActualTemp != nil ? "\(Int(day.dayActualTemp!))°C" : "-"
     }
     
     var nightActual: String {
-        return day!.nightActualTemp != nil ? "\(Int(day!.nightActualTemp!))°C" : "-"
+        return day.nightActualTemp != nil ? "\(Int(day.nightActualTemp!))°C" : "-"
     }
     
     var longDate: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm dd-MM-yyyy"
-        return self.day?.date != nil ? dateFormatter.string(from: self.day!.date!) : ""
+        return self.day.date != nil ? dateFormatter.string(from: self.day.date!) : ""
     }
     
     var dayDate: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEE"
-        return self.day?.date != nil ? dateFormatter.string(from: self.day!.date!) : ""
+        return self.day.date != nil ? dateFormatter.string(from: self.day.date!) : ""
     }
     
     var shortDate: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yy"
-        return self.day?.date != nil ? dateFormatter.string(from: self.day!.date!) : ""
+        return self.day.date != nil ? dateFormatter.string(from: self.day.date!) : ""
     }
     
     var timeSteps: [TimeStep]? {
-        return self.day?.timeSteps
+        return self.day.timeSteps
     }
     
     var symbol: UIImage? {
-        if let symbolID = self.day!.dayWeatherSymbol, let image = UIImage(named: String(symbolID)) {
+        if let symbolID = self.day.dayWeatherSymbol, let image = UIImage(named: String(symbolID)) {
             return image
         } else {
             return UIImage(named: "")

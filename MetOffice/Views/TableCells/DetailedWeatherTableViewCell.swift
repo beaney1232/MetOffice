@@ -54,25 +54,29 @@ class DetailedWeatherTableViewCell: UITableViewCell, UICollectionViewDelegate, U
     }
     
     func configure() {
+        guard let dayVM = self.dayVM else { return }
         let nib = UINib(nibName: "DetailedDayCollectionViewCell", bundle: nil)
         self.collectionView.register(nib, forCellWithReuseIdentifier: "cell")
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        self.currentTimeStep = self.dayVM!.timeSteps![0]
+        self.currentTimeStep = dayVM.timeSteps![0]
         self.collectionView.reloadData()
         let indexPath = IndexPath(item: 0, section: 0)
         self.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .left)
     }
     
     func configureWind() {
+        guard let currentTimeStepVM = self.currentTimeStepVM else { return }
+        
         on.delay(1.0, task: {
-            self.setWind(value: self.currentTimeStepVM!.windDirection)
+            self.setWind(value: currentTimeStepVM.windDirection)
         })
-        self.wind.text = self.currentTimeStepVM!.windString
-        self.windGust.text = self.currentTimeStepVM!.windGust
-        self.windSpeed.text = self.currentTimeStepVM!.windSpeed
-        self.visibility.text = self.currentTimeStepVM!.visibility
-        self.feelsLike.text = self.currentTimeStepVM!.feelsTemp
+        
+        self.wind.text = currentTimeStepVM.windString
+        self.windGust.text = currentTimeStepVM.windGust
+        self.windSpeed.text = currentTimeStepVM.windSpeed
+        self.visibility.text = currentTimeStepVM.visibility
+        self.feelsLike.text = currentTimeStepVM.feelsTemp
     }
 
     override func awakeFromNib() {
@@ -144,7 +148,11 @@ class DetailedWeatherTableViewCell: UITableViewCell, UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let customCell: DetailedDayCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? DetailedDayCollectionViewCell {
             customCell.type = self.currentType
-            customCell.timestep = self.day!.timeSteps![indexPath.row]
+            
+            if let timeStep = self.day?.timeSteps![indexPath.row] {
+                customCell.timestep = timeStep
+            }
+            
             return customCell
         }
         
@@ -158,7 +166,7 @@ class DetailedWeatherTableViewCell: UITableViewCell, UICollectionViewDelegate, U
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.day!.timeSteps!.count ?? 0
+        return self.day?.timeSteps?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

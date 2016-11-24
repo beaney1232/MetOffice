@@ -24,7 +24,8 @@ class SearchResultTableViewCell: UITableViewCell {
     }
     
     func configure() {
-        self.areaName.text = searchResultVM!.name
+        guard let searchResultVM = self.searchResultVM else { return }
+        self.areaName.text = searchResultVM.name
     }
     
     override func awakeFromNib() {

@@ -57,7 +57,7 @@ class WeatherPagingViewController: UIViewController, UIPageViewControllerDelegat
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         
         if index == 0 {
-            return storyboard.instantiateViewController(withIdentifier: "snapshot") as! SnapshotViewController
+            return storyboard.instantiateViewController(withIdentifier: "snapshot") as? SnapshotViewController
         }
         
         if let sites = ForecastController.shared.sites, sites.count >= index {

@@ -25,13 +25,14 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var index: Int? {
         didSet {
-            if ForecastController.shared.sites != nil && index! <= ForecastController.shared.sites!.count {
-                self.site = ForecastController.shared.sites![self.index! - 1]
+            guard let index = index else { return }
+            if let sites = ForecastController.shared.sites, index <= sites.count {
+                self.site = sites[index - 1]
                 self.forecast = self.site!.forecast
             }
             
             ForecastController.shared.subscribeWithBlock(completion: { 
-                self.forecast = ForecastController.shared.sites![self.index! - 1].forecast
+                self.forecast = ForecastController.shared.sites![index - 1].forecast
             }, key: "detail-\(index)")
         }
     }
@@ -45,7 +46,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var forecastVM: DetailedForecastViewModel? {
         didSet {
-            self.currentDay = self.forecastVM!.days[0]
+            guard let forecastVM = self.forecastVM else { return }
+            self.currentDay = forecastVM.days[0]
             self.configureCollectionView()
         }
     }
@@ -132,7 +134,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let customCell: SnapshotDayCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? SnapshotDayCollectionViewCell {
-            customCell.day = self.forecast!.days![indexPath.row]
+            if let day = self.forecastVM?.days[indexPath.row] {
+                customCell.day = day
+            }
+
             return customCell
         }
         

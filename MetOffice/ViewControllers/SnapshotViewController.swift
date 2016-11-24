@@ -55,7 +55,10 @@ class SnapshotViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell: SnapshotTableViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? SnapshotTableViewCell {
-            cell.site = siteVMs![indexPath.row]
+            if let siteVMs = self.siteVMs {
+                cell.siteVM = siteVMs[indexPath.row]
+            }
+            
             return cell
         }
         

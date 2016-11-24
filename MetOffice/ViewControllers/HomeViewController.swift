@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
                     UIView.animate(withDuration: 0.3, animations: { 
                         self.noSitesTitle.alpha = 1.0
                         self.noSitesDescription.alpha = 1.0
-                        self.addButton.imageView!.image = UIImage(named: "add-btn")?.withRenderingMode(.alwaysTemplate)
+                        self.addButton.imageView?.image = UIImage(named: "add-btn")?.withRenderingMode(.alwaysTemplate)
                         self.addButton.tintColor = UIColor.red
                     })
                     

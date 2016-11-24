@@ -14,10 +14,11 @@ class SnapshotTableViewCell: UICollectionViewCell, UICollectionViewDelegate, UIC
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var container: UIView!
     
-    var site: SiteViewModel? {
+    var siteVM: SiteViewModel? {
         didSet {
-            self.siteName.text = self.site!.siteName
-            self.forecast = ForecastViewModel(forecast: site!.snapshot!)
+            guard let siteVM = self.siteVM else { return }
+            self.siteName.text = siteVM.siteName
+            self.forecast = ForecastViewModel(forecast: siteVM.snapshot!)
         }
     }
     
@@ -45,13 +46,16 @@ class SnapshotTableViewCell: UICollectionViewCell, UICollectionViewDelegate, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.forecast!.snapshotTimeSteps?.count ?? 0
+        return self.forecast?.snapshotTimeSteps?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let customCell: SnapshotDayCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? SnapshotDayCollectionViewCell {
-            let timestep = forecast!.snapshotTimeSteps![indexPath.row]
-            customCell.timeStep = timestep
+            
+            if let timeStep = forecast?.snapshotTimeSteps?[indexPath.row] {
+                customCell.timeStep = timeStep
+            }
+            
             return customCell
         }
         

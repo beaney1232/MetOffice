@@ -13,8 +13,8 @@ class ForecastController: DataStore {
     
     var sites: [Site]? {
         didSet {
-            if sites != nil && sites!.count > 0 {
-                self.storeSiteData(sites: self.sites!)
+            if let sites = self.sites, sites.count > 0 {
+                self.storeSiteData(sites: sites)
             }
             informSubscribers()
         }
@@ -24,7 +24,7 @@ class ForecastController: DataStore {
         let searchVM = SearchResultViewModel(searchResult: searchResult)
         let queue = OperationQueue()
         let siteOp = SiteOperation(lat: searchVM.lat, long: searchVM.long) { site in
-            guard let site = site else {
+            guard let site = site, self.sites != nil else {
                 return
             }
             
@@ -194,11 +194,11 @@ class ForecastOperation: Operation {
             let sema = DispatchSemaphore(value: 0)
 
             NetworkController.shared.requestJSON(url: url, completion: { (dict) in
-                guard let dict = dict, let data = dict.dictForKey(key: "data") else {
+                guard let dict = dict, let data = dict.dictForKey(key: "data"), let type = self.type else {
                     return
                 }
                 
-                switch self.type! {
+                switch type {
                 case "snapshot":
                     let forecast = Forecast(json: data)
                     self.completion(forecast)

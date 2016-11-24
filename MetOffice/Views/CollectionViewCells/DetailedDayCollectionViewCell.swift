@@ -37,27 +37,26 @@ class DetailedDayCollectionViewCell: UICollectionViewCell {
     }
     
     func configure() {
+        guard let timeStepVM = self.timeStepVM else { return }
         switch self.type {
         case .humidity :
-            self.value.text = self.timeStepVM!.humidity
+            self.value.text = timeStepVM.humidity
             break
         case .uv:
-            self.value.text = self.timeStepVM!.uv
+            self.value.text = timeStepVM.uv
             break
         case .precipitation:
-            self.value.text = self.timeStepVM!.precipProbString
+            self.value.text = timeStepVM.precipProbString
             break
         case .pressure:
-            self.value.text = self.timeStepVM!.pressure
-        default:
-            break
+            self.value.text = timeStepVM.pressure
         }
         
-        weatherImage.image = timeStepVM?.symbol
-        temperature.text = timeStepVM?.actualTemp
+        weatherImage.image = timeStepVM.symbol
+        temperature.text = timeStepVM.actualTemp
         temperature.layer.cornerRadius = 3.0
         temperature.clipsToBounds = true
-        timeStamp.text = timeStepVM?.startTime
+        timeStamp.text = timeStepVM.startTime
     }
     
     override func awakeFromNib() {

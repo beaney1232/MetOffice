@@ -33,7 +33,7 @@ class SnapshotDayCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    private var timeStepVM: TimeStepViewModel! {
+    private var timeStepVM: TimeStepViewModel? {
         didSet {
             configureAsTimeStep()
         }
@@ -53,13 +53,15 @@ class SnapshotDayCollectionViewCell: UICollectionViewCell {
     }
     
     func configureAsTimeStep() {
-        self.timeStamp.text = self.timeStepVM.startTime
-        self.weatherIcon.image = self.timeStepVM.symbol
+        guard let timeStepVM = self.timeStepVM else { return }
+        self.timeStamp.text = timeStepVM.startTime
+        self.weatherIcon.image = timeStepVM.symbol
     }
     
     func configureAsDay() {
-        self.timeStamp.text = self.dayVM!.dayDate.uppercased()
-        self.weatherIcon.image = self.dayVM!.symbol
+        guard let dayVM = self.dayVM else { return }
+        self.timeStamp.text = dayVM.dayDate.uppercased()
+        self.weatherIcon.image = dayVM.symbol
         
     }
     

@@ -124,8 +124,8 @@ class TimeStepViewModel {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         
-        if self.step.startDate!.isLessThanDate(Date()) {
-            return "Now"
+        if let startDate = self.step.startDate {
+            if startDate.isLessThanDate(Date()) { return "Now" }
         }
         
         return self.step.startDate != nil ? dateFormatter.string(from: self.step.startDate!) : "-"
