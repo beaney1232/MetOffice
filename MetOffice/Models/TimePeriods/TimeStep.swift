@@ -85,7 +85,6 @@ class TimeStep: NSObject, NSCoding {
         coder.encode(self.uvRating, forKey: "uvRating")
         coder.encode(self.visibility, forKey: "visibility")
         coder.encode(self.humidity, forKey: "humidity")
-        coder.encode(self.humidity, forKey: "humidity")
         coder.encode(self.pressure, forKey: "pressure")
     }
 }
