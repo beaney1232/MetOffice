@@ -1,0 +1,1029 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C3C424D844450B3AEC97FC6 /* Pods_MetOfficeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBED6836484F3745A42010A /* Pods_MetOfficeTests.framework */; };
+		922C116E3E0D131DC19CA54F /* Pods_MetOffice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4CDC52BCEB93A88D7B5C79 /* Pods_MetOffice.framework */; };
+		9707ADE982E03D0E85B32CD9 /* Pods_MetOfficeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6519A20553B0A4749E07D00C /* Pods_MetOfficeUITests.framework */; };
+		BE07A4B31DE39C7600120470 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07A4B21DE39C7600120470 /* DetailViewController.swift */; };
+		BE07A4B61DE39EE100120470 /* SimpleWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07A4B41DE39EE100120470 /* SimpleWeatherTableViewCell.swift */; };
+		BE07A4B71DE39EE100120470 /* SimpleWeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE07A4B51DE39EE100120470 /* SimpleWeatherTableViewCell.xib */; };
+		BE07A4BA1DE3B72100120470 /* DetailedWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07A4B81DE3B72100120470 /* DetailedWeatherTableViewCell.swift */; };
+		BE07A4BB1DE3B72100120470 /* DetailedWeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE07A4B91DE3B72100120470 /* DetailedWeatherTableViewCell.xib */; };
+		BE07A4BE1DE3B7FD00120470 /* DetailedDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07A4BC1DE3B7FD00120470 /* DetailedDayCollectionViewCell.swift */; };
+		BE07A4BF1DE3B7FD00120470 /* DetailedDayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE07A4BD1DE3B7FD00120470 /* DetailedDayCollectionViewCell.xib */; };
+		BE0A48D71DE4DC39002A396D /* wind-icon-final.png in Resources */ = {isa = PBXBuildFile; fileRef = BE0A48D61DE4DC39002A396D /* wind-icon-final.png */; };
+		BE0A48D91DE4F16C002A396D /* background-clear.png in Resources */ = {isa = PBXBuildFile; fileRef = BE0A48D81DE4F16C002A396D /* background-clear.png */; };
+		BE1135091DDEEECA008D8823 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1135081DDEEECA008D8823 /* Forecast.swift */; };
+		BE11350B1DDEEF66008D8823 /* DetailedForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11350A1DDEEF66008D8823 /* DetailedForecast.swift */; };
+		BE4A33111DDCF39A00C7147B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4A33101DDCF39A00C7147B /* AppDelegate.swift */; };
+		BE4A33131DDCF39A00C7147B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4A33121DDCF39A00C7147B /* HomeViewController.swift */; };
+		BE4A33161DDCF39A00C7147B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4A33141DDCF39A00C7147B /* Main.storyboard */; };
+		BE4A33181DDCF39A00C7147B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE4A33171DDCF39A00C7147B /* Assets.xcassets */; };
+		BE4A331B1DDCF39A00C7147B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4A33191DDCF39A00C7147B /* LaunchScreen.storyboard */; };
+		BE4A33261DDCF39A00C7147B /* MetOfficeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4A33251DDCF39A00C7147B /* MetOfficeTests.swift */; };
+		BE4A33311DDCF39A00C7147B /* MetOfficeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4A33301DDCF39A00C7147B /* MetOfficeUITests.swift */; };
+		BE6AAFEE1DE62C5700EE8AF4 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = BE6AAFED1DE62C5700EE8AF4 /* 8.png */; };
+		BE6AAFF21DE62D3300EE8AF4 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = BE6AAFF11DE62D3300EE8AF4 /* 1.png */; };
+		BE6AAFF41DE62DFD00EE8AF4 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = BE6AAFF31DE62DFD00EE8AF4 /* 0.png */; };
+		BE6AAFF61DE6445A00EE8AF4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAFF51DE6445A00EE8AF4 /* SearchViewController.swift */; };
+		BE6AAFF81DE6452B00EE8AF4 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAFF71DE6452B00EE8AF4 /* SearchController.swift */; };
+		BE6AAFFA1DE6465500EE8AF4 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAFF91DE6465500EE8AF4 /* SearchResult.swift */; };
+		BE6AAFFD1DE64A7A00EE8AF4 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAFFB1DE64A7A00EE8AF4 /* SearchResultTableViewCell.swift */; };
+		BE6AAFFE1DE64A7A00EE8AF4 /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE6AAFFC1DE64A7A00EE8AF4 /* SearchResultTableViewCell.xib */; };
+		BE6AB0001DE7239700EE8AF4 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = BE6AAFFF1DE7239700EE8AF4 /* 3.png */; };
+		BE892B511DE2385D0026B52C /* Date+HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE892B501DE2385D0026B52C /* Date+HelperFunctions.swift */; };
+		BE892B531DE241E40026B52C /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE892B521DE241E40026B52C /* DataStore.swift */; };
+		BEC19FDD1DE1F47F003D0012 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FDC1DE1F47F003D0012 /* background.png */; };
+		BEC19FE11DE1F566003D0012 /* settings-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FE01DE1F566003D0012 /* settings-btn.png */; };
+		BEC19FE31DE1F5CD003D0012 /* add-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FE21DE1F5CD003D0012 /* add-btn.png */; };
+		BEC19FE51DE1F643003D0012 /* footer-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FE41DE1F643003D0012 /* footer-logo.png */; };
+		BEC19FE71DE1F7E9003D0012 /* WeatherPagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC19FE61DE1F7E9003D0012 /* WeatherPagingViewController.swift */; };
+		BEC19FE91DE1F9B6003D0012 /* SnapshotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC19FE81DE1F9B6003D0012 /* SnapshotViewController.swift */; };
+		BEC19FED1DE1FD9C003D0012 /* SnapshotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC19FEB1DE1FD9C003D0012 /* SnapshotTableViewCell.swift */; };
+		BEC19FEE1DE1FD9C003D0012 /* SnapshotTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FEC1DE1FD9C003D0012 /* SnapshotTableViewCell.xib */; };
+		BEC19FF21DE1FEA6003D0012 /* SnapshotDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC19FF01DE1FEA6003D0012 /* SnapshotDayCollectionViewCell.swift */; };
+		BEC19FF31DE1FEA6003D0012 /* SnapshotDayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FF11DE1FEA6003D0012 /* SnapshotDayCollectionViewCell.xib */; };
+		BEC19FF51DE2110B003D0012 /* on.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC19FF41DE2110B003D0012 /* on.swift */; };
+		BEC19FFE1DE2351D003D0012 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FF91DE2351D003D0012 /* 7.png */; };
+		BEC19FFF1DE2351D003D0012 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FFA1DE2351D003D0012 /* 9.png */; };
+		BEC1A0001DE2351D003D0012 /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FFB1DE2351D003D0012 /* 12.png */; };
+		BEC1A0011DE2351D003D0012 /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FFC1DE2351D003D0012 /* 13.png */; };
+		BEC1A0021DE2351D003D0012 /* 15.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FFD1DE2351D003D0012 /* 15.png */; };
+		BEC1A0041DE23733003D0012 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC1A0031DE23733003D0012 /* 2.png */; };
+		BEE5353D1DDE3DF9003A691B /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE5353C1DDE3DF9003A691B /* Strings.swift */; };
+		BEE5353F1DDE430D003A691B /* TimeStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE5353E1DDE430D003A691B /* TimeStep.swift */; };
+		BEE535421DDE450A003A691B /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE535411DDE450A003A691B /* DictionaryExtension.swift */; };
+		BEE535461DDE4A5B003A691B /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE535451DDE4A5B003A691B /* Day.swift */; };
+		BEE5354E1DDE4C9C003A691B /* MBDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE5354D1DDE4C9C003A691B /* MBDateFormatter.swift */; };
+		BEE535501DDE4E5D003A691B /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE5354F1DDE4E5D003A691B /* Site.swift */; };
+		BEE535521DDE50B4003A691B /* Outlook.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE535511DDE50B4003A691B /* Outlook.swift */; };
+		BEE535541DDE527E003A691B /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE535531DDE527E003A691B /* NetworkController.swift */; };
+		BEE535561DDE5AD9003A691B /* ForecastController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE535551DDE5AD9003A691B /* ForecastController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE4A33221DDCF39A00C7147B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE4A33051DDCF39A00C7147B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE4A330C1DDCF39A00C7147B;
+			remoteInfo = MetOffice;
+		};
+		BE4A332D1DDCF39A00C7147B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE4A33051DDCF39A00C7147B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE4A330C1DDCF39A00C7147B;
+			remoteInfo = MetOffice;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		55D46E0523F7C81922C19EDF /* Pods-MetOffice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetOffice.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetOffice/Pods-MetOffice.release.xcconfig"; sourceTree = "<group>"; };
+		6519A20553B0A4749E07D00C /* Pods_MetOfficeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetOfficeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6850BA4BB8039A28D06E5E0B /* Pods-MetOfficeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetOfficeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetOfficeUITests/Pods-MetOfficeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6A1845EE2457CA401A13F94B /* Pods-MetOfficeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetOfficeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetOfficeTests/Pods-MetOfficeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6D4CDC52BCEB93A88D7B5C79 /* Pods_MetOffice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetOffice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BBED6836484F3745A42010A /* Pods_MetOfficeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetOfficeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A08344D1C9FD72E34004CC5B /* Pods-MetOfficeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetOfficeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetOfficeTests/Pods-MetOfficeTests.release.xcconfig"; sourceTree = "<group>"; };
+		B4D76740F0A50A7C6D822095 /* Pods-MetOfficeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetOfficeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetOfficeUITests/Pods-MetOfficeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BE07A4B21DE39C7600120470 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BE07A4B41DE39EE100120470 /* SimpleWeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleWeatherTableViewCell.swift; sourceTree = "<group>"; };
+		BE07A4B51DE39EE100120470 /* SimpleWeatherTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleWeatherTableViewCell.xib; sourceTree = "<group>"; };
+		BE07A4B81DE3B72100120470 /* DetailedWeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedWeatherTableViewCell.swift; sourceTree = "<group>"; };
+		BE07A4B91DE3B72100120470 /* DetailedWeatherTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailedWeatherTableViewCell.xib; sourceTree = "<group>"; };
+		BE07A4BC1DE3B7FD00120470 /* DetailedDayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedDayCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE07A4BD1DE3B7FD00120470 /* DetailedDayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailedDayCollectionViewCell.xib; sourceTree = "<group>"; };
+		BE0A48D61DE4DC39002A396D /* wind-icon-final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wind-icon-final.png"; sourceTree = "<group>"; };
+		BE0A48D81DE4F16C002A396D /* background-clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-clear.png"; sourceTree = "<group>"; };
+		BE1135081DDEEECA008D8823 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		BE11350A1DDEEF66008D8823 /* DetailedForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedForecast.swift; sourceTree = "<group>"; };
+		BE4A330D1DDCF39A00C7147B /* MetOffice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetOffice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE4A33101DDCF39A00C7147B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BE4A33121DDCF39A00C7147B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BE4A33151DDCF39A00C7147B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE4A33171DDCF39A00C7147B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE4A331A1DDCF39A00C7147B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BE4A331C1DDCF39A00C7147B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE4A33211DDCF39A00C7147B /* MetOfficeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetOfficeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE4A33251DDCF39A00C7147B /* MetOfficeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetOfficeTests.swift; sourceTree = "<group>"; };
+		BE4A33271DDCF39A00C7147B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE4A332C1DDCF39A00C7147B /* MetOfficeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetOfficeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE4A33301DDCF39A00C7147B /* MetOfficeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetOfficeUITests.swift; sourceTree = "<group>"; };
+		BE4A33321DDCF39A00C7147B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE6AAFED1DE62C5700EE8AF4 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
+		BE6AAFF11DE62D3300EE8AF4 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		BE6AAFF31DE62DFD00EE8AF4 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
+		BE6AAFF51DE6445A00EE8AF4 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BE6AAFF71DE6452B00EE8AF4 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		BE6AAFF91DE6465500EE8AF4 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		BE6AAFFB1DE64A7A00EE8AF4 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		BE6AAFFC1DE64A7A00EE8AF4 /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
+		BE6AAFFF1DE7239700EE8AF4 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		BE892B501DE2385D0026B52C /* Date+HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+HelperFunctions.swift"; sourceTree = "<group>"; };
+		BE892B521DE241E40026B52C /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		BEC19FDC1DE1F47F003D0012 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		BEC19FE01DE1F566003D0012 /* settings-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-btn.png"; sourceTree = "<group>"; };
+		BEC19FE21DE1F5CD003D0012 /* add-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add-btn.png"; sourceTree = "<group>"; };
+		BEC19FE41DE1F643003D0012 /* footer-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "footer-logo.png"; sourceTree = "<group>"; };
+		BEC19FE61DE1F7E9003D0012 /* WeatherPagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherPagingViewController.swift; sourceTree = "<group>"; };
+		BEC19FE81DE1F9B6003D0012 /* SnapshotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotViewController.swift; sourceTree = "<group>"; };
+		BEC19FEB1DE1FD9C003D0012 /* SnapshotTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotTableViewCell.swift; sourceTree = "<group>"; };
+		BEC19FEC1DE1FD9C003D0012 /* SnapshotTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SnapshotTableViewCell.xib; sourceTree = "<group>"; };
+		BEC19FF01DE1FEA6003D0012 /* SnapshotDayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotDayCollectionViewCell.swift; sourceTree = "<group>"; };
+		BEC19FF11DE1FEA6003D0012 /* SnapshotDayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SnapshotDayCollectionViewCell.xib; sourceTree = "<group>"; };
+		BEC19FF41DE2110B003D0012 /* on.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = on.swift; sourceTree = "<group>"; };
+		BEC19FF91DE2351D003D0012 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
+		BEC19FFA1DE2351D003D0012 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
+		BEC19FFB1DE2351D003D0012 /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
+		BEC19FFC1DE2351D003D0012 /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13.png; sourceTree = "<group>"; };
+		BEC19FFD1DE2351D003D0012 /* 15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 15.png; sourceTree = "<group>"; };
+		BEC1A0031DE23733003D0012 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		BEE5353C1DDE3DF9003A691B /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		BEE5353E1DDE430D003A691B /* TimeStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStep.swift; sourceTree = "<group>"; };
+		BEE535411DDE450A003A691B /* DictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
+		BEE535451DDE4A5B003A691B /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		BEE5354D1DDE4C9C003A691B /* MBDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBDateFormatter.swift; sourceTree = "<group>"; };
+		BEE5354F1DDE4E5D003A691B /* Site.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
+		BEE535511DDE50B4003A691B /* Outlook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Outlook.swift; sourceTree = "<group>"; };
+		BEE535531DDE527E003A691B /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		BEE535551DDE5AD9003A691B /* ForecastController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastController.swift; sourceTree = "<group>"; };
+		D7F7724F3390E119B86C242F /* Pods-MetOffice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetOffice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetOffice/Pods-MetOffice.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE4A330A1DDCF39A00C7147B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				922C116E3E0D131DC19CA54F /* Pods_MetOffice.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE4A331E1DDCF39A00C7147B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C3C424D844450B3AEC97FC6 /* Pods_MetOfficeTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE4A33291DDCF39A00C7147B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9707ADE982E03D0E85B32CD9 /* Pods_MetOfficeUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00B43F31E8E2EABDACE19763 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D7F7724F3390E119B86C242F /* Pods-MetOffice.debug.xcconfig */,
+				55D46E0523F7C81922C19EDF /* Pods-MetOffice.release.xcconfig */,
+				6A1845EE2457CA401A13F94B /* Pods-MetOfficeTests.debug.xcconfig */,
+				A08344D1C9FD72E34004CC5B /* Pods-MetOfficeTests.release.xcconfig */,
+				B4D76740F0A50A7C6D822095 /* Pods-MetOfficeUITests.debug.xcconfig */,
+				6850BA4BB8039A28D06E5E0B /* Pods-MetOfficeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7951B5CCC1A4CC60C75DE32F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D4CDC52BCEB93A88D7B5C79 /* Pods_MetOffice.framework */,
+				9BBED6836484F3745A42010A /* Pods_MetOfficeTests.framework */,
+				6519A20553B0A4749E07D00C /* Pods_MetOfficeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE11350E1DDEF108008D8823 /* ForecastTypes */ = {
+			isa = PBXGroup;
+			children = (
+				BE11350A1DDEEF66008D8823 /* DetailedForecast.swift */,
+				BE1135081DDEEECA008D8823 /* Forecast.swift */,
+				BEE535511DDE50B4003A691B /* Outlook.swift */,
+			);
+			path = ForecastTypes;
+			sourceTree = "<group>";
+		};
+		BE11350F1DDEF134008D8823 /* TimePeriods */ = {
+			isa = PBXGroup;
+			children = (
+				BEE535451DDE4A5B003A691B /* Day.swift */,
+				BEE5353E1DDE430D003A691B /* TimeStep.swift */,
+			);
+			path = TimePeriods;
+			sourceTree = "<group>";
+		};
+		BE4A33041DDCF39A00C7147B = {
+			isa = PBXGroup;
+			children = (
+				BE4A330F1DDCF39A00C7147B /* MetOffice */,
+				BE4A33241DDCF39A00C7147B /* MetOfficeTests */,
+				BE4A332F1DDCF39A00C7147B /* MetOfficeUITests */,
+				BE4A330E1DDCF39A00C7147B /* Products */,
+				00B43F31E8E2EABDACE19763 /* Pods */,
+				7951B5CCC1A4CC60C75DE32F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BE4A330E1DDCF39A00C7147B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE4A330D1DDCF39A00C7147B /* MetOffice.app */,
+				BE4A33211DDCF39A00C7147B /* MetOfficeTests.xctest */,
+				BE4A332C1DDCF39A00C7147B /* MetOfficeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE4A330F1DDCF39A00C7147B /* MetOffice */ = {
+			isa = PBXGroup;
+			children = (
+				BEC19FDA1DE1F442003D0012 /* Assets */,
+				BEE5354C1DDE4C71003A691B /* Utils */,
+				BEE5354B1DDE4AE4003A691B /* Enums */,
+				BEE535401DDE44DF003A691B /* Extensions */,
+				BE4A33431DDCF3F300C7147B /* ViewControllers */,
+				BE4A33421DDCF3EE00C7147B /* Controllers */,
+				BE4A33401DDCF3E500C7147B /* Views */,
+				BE4A333F1DDCF3E000C7147B /* Models */,
+				BE4A33101DDCF39A00C7147B /* AppDelegate.swift */,
+				BE4A33141DDCF39A00C7147B /* Main.storyboard */,
+				BE4A33171DDCF39A00C7147B /* Assets.xcassets */,
+				BE4A33191DDCF39A00C7147B /* LaunchScreen.storyboard */,
+				BE4A331C1DDCF39A00C7147B /* Info.plist */,
+				BEE5353C1DDE3DF9003A691B /* Strings.swift */,
+			);
+			path = MetOffice;
+			sourceTree = "<group>";
+		};
+		BE4A33241DDCF39A00C7147B /* MetOfficeTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE4A33251DDCF39A00C7147B /* MetOfficeTests.swift */,
+				BE4A33271DDCF39A00C7147B /* Info.plist */,
+			);
+			path = MetOfficeTests;
+			sourceTree = "<group>";
+		};
+		BE4A332F1DDCF39A00C7147B /* MetOfficeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BE4A33301DDCF39A00C7147B /* MetOfficeUITests.swift */,
+				BE4A33321DDCF39A00C7147B /* Info.plist */,
+			);
+			path = MetOfficeUITests;
+			sourceTree = "<group>";
+		};
+		BE4A333F1DDCF3E000C7147B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE11350F1DDEF134008D8823 /* TimePeriods */,
+				BE11350E1DDEF108008D8823 /* ForecastTypes */,
+				BEE5354F1DDE4E5D003A691B /* Site.swift */,
+				BE6AAFF91DE6465500EE8AF4 /* SearchResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BE4A33401DDCF3E500C7147B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BEC19FEF1DE1FE68003D0012 /* CollectionViewCells */,
+				BEC19FEA1DE1FD57003D0012 /* TableCells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BE4A33421DDCF3EE00C7147B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE892B521DE241E40026B52C /* DataStore.swift */,
+				BEE535551DDE5AD9003A691B /* ForecastController.swift */,
+				BEE535531DDE527E003A691B /* NetworkController.swift */,
+				BE6AAFF71DE6452B00EE8AF4 /* SearchController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BE4A33431DDCF3F300C7147B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE07A4B21DE39C7600120470 /* DetailViewController.swift */,
+				BE4A33121DDCF39A00C7147B /* HomeViewController.swift */,
+				BE6AAFF51DE6445A00EE8AF4 /* SearchViewController.swift */,
+				BEC19FE81DE1F9B6003D0012 /* SnapshotViewController.swift */,
+				BEC19FE61DE1F7E9003D0012 /* WeatherPagingViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BEC19FDA1DE1F442003D0012 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BEC19FDF1DE1F54E003D0012 /* Icons */,
+				BEC19FDB1DE1F45B003D0012 /* Images */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		BEC19FDB1DE1F45B003D0012 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BEC19FDC1DE1F47F003D0012 /* background.png */,
+				BEC19FE41DE1F643003D0012 /* footer-logo.png */,
+				BE0A48D81DE4F16C002A396D /* background-clear.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		BEC19FDF1DE1F54E003D0012 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				BEC19FF61DE23212003D0012 /* Weather */,
+				BEC19FE21DE1F5CD003D0012 /* add-btn.png */,
+				BE0A48D61DE4DC39002A396D /* wind-icon-final.png */,
+				BEC19FE01DE1F566003D0012 /* settings-btn.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		BEC19FEA1DE1FD57003D0012 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				BE07A4B41DE39EE100120470 /* SimpleWeatherTableViewCell.swift */,
+				BE07A4B51DE39EE100120470 /* SimpleWeatherTableViewCell.xib */,
+				BE07A4B81DE3B72100120470 /* DetailedWeatherTableViewCell.swift */,
+				BE07A4B91DE3B72100120470 /* DetailedWeatherTableViewCell.xib */,
+				BE6AAFFB1DE64A7A00EE8AF4 /* SearchResultTableViewCell.swift */,
+				BE6AAFFC1DE64A7A00EE8AF4 /* SearchResultTableViewCell.xib */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		BEC19FEF1DE1FE68003D0012 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				BEC19FF01DE1FEA6003D0012 /* SnapshotDayCollectionViewCell.swift */,
+				BEC19FF11DE1FEA6003D0012 /* SnapshotDayCollectionViewCell.xib */,
+				BEC19FEB1DE1FD9C003D0012 /* SnapshotTableViewCell.swift */,
+				BEC19FEC1DE1FD9C003D0012 /* SnapshotTableViewCell.xib */,
+				BE07A4BC1DE3B7FD00120470 /* DetailedDayCollectionViewCell.swift */,
+				BE07A4BD1DE3B7FD00120470 /* DetailedDayCollectionViewCell.xib */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		BEC19FF61DE23212003D0012 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				BE6AAFF31DE62DFD00EE8AF4 /* 0.png */,
+				BE6AAFF11DE62D3300EE8AF4 /* 1.png */,
+				BEC1A0031DE23733003D0012 /* 2.png */,
+				BE6AAFFF1DE7239700EE8AF4 /* 3.png */,
+				BEC19FF91DE2351D003D0012 /* 7.png */,
+				BE6AAFED1DE62C5700EE8AF4 /* 8.png */,
+				BEC19FFA1DE2351D003D0012 /* 9.png */,
+				BEC19FFB1DE2351D003D0012 /* 12.png */,
+				BEC19FFC1DE2351D003D0012 /* 13.png */,
+				BEC19FFD1DE2351D003D0012 /* 15.png */,
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
+		BEE535401DDE44DF003A691B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BEE535411DDE450A003A691B /* DictionaryExtension.swift */,
+				BE892B501DE2385D0026B52C /* Date+HelperFunctions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BEE5354B1DDE4AE4003A691B /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		BEE5354C1DDE4C71003A691B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BEE5354D1DDE4C9C003A691B /* MBDateFormatter.swift */,
+				BEC19FF41DE2110B003D0012 /* on.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE4A330C1DDCF39A00C7147B /* MetOffice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE4A33351DDCF39A00C7147B /* Build configuration list for PBXNativeTarget "MetOffice" */;
+			buildPhases = (
+				66C7A1E0F3C04CB39077EDD5 /* [CP] Check Pods Manifest.lock */,
+				BE4A33091DDCF39A00C7147B /* Sources */,
+				BE4A330A1DDCF39A00C7147B /* Frameworks */,
+				BE4A330B1DDCF39A00C7147B /* Resources */,
+				BCBF397ED08ACC048A5FD7F8 /* [CP] Embed Pods Frameworks */,
+				DA21C8F57A5499FCFB487504 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MetOffice;
+			productName = MetOffice;
+			productReference = BE4A330D1DDCF39A00C7147B /* MetOffice.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BE4A33201DDCF39A00C7147B /* MetOfficeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE4A33381DDCF39A00C7147B /* Build configuration list for PBXNativeTarget "MetOfficeTests" */;
+			buildPhases = (
+				C65927CD148693B6040380DE /* [CP] Check Pods Manifest.lock */,
+				BE4A331D1DDCF39A00C7147B /* Sources */,
+				BE4A331E1DDCF39A00C7147B /* Frameworks */,
+				BE4A331F1DDCF39A00C7147B /* Resources */,
+				7CC5053E5B1E20A2D38441EE /* [CP] Embed Pods Frameworks */,
+				01C76AF8B1002B2F5F7BAA3B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE4A33231DDCF39A00C7147B /* PBXTargetDependency */,
+			);
+			name = MetOfficeTests;
+			productName = MetOfficeTests;
+			productReference = BE4A33211DDCF39A00C7147B /* MetOfficeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BE4A332B1DDCF39A00C7147B /* MetOfficeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE4A333B1DDCF39A00C7147B /* Build configuration list for PBXNativeTarget "MetOfficeUITests" */;
+			buildPhases = (
+				6FA6C10862F84313FD55F891 /* [CP] Check Pods Manifest.lock */,
+				BE4A33281DDCF39A00C7147B /* Sources */,
+				BE4A33291DDCF39A00C7147B /* Frameworks */,
+				BE4A332A1DDCF39A00C7147B /* Resources */,
+				DFAEFE4A70F3AFC49348E70D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE4A332E1DDCF39A00C7147B /* PBXTargetDependency */,
+			);
+			name = MetOfficeUITests;
+			productName = MetOfficeUITests;
+			productReference = BE4A332C1DDCF39A00C7147B /* MetOfficeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE4A33051DDCF39A00C7147B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Matt Beaney";
+				TargetAttributes = {
+					BE4A330C1DDCF39A00C7147B = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = U5FH5JR68H;
+						ProvisioningStyle = Manual;
+					};
+					BE4A33201DDCF39A00C7147B = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BE4A330C1DDCF39A00C7147B;
+					};
+					BE4A332B1DDCF39A00C7147B = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BE4A330C1DDCF39A00C7147B;
+					};
+				};
+			};
+			buildConfigurationList = BE4A33081DDCF39A00C7147B /* Build configuration list for PBXProject "MetOffice" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BE4A33041DDCF39A00C7147B;
+			productRefGroup = BE4A330E1DDCF39A00C7147B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE4A330C1DDCF39A00C7147B /* MetOffice */,
+				BE4A33201DDCF39A00C7147B /* MetOfficeTests */,
+				BE4A332B1DDCF39A00C7147B /* MetOfficeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE4A330B1DDCF39A00C7147B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEC1A0011DE2351D003D0012 /* 13.png in Resources */,
+				BEC1A0001DE2351D003D0012 /* 12.png in Resources */,
+				BEC19FFF1DE2351D003D0012 /* 9.png in Resources */,
+				BEC19FE11DE1F566003D0012 /* settings-btn.png in Resources */,
+				BE4A331B1DDCF39A00C7147B /* LaunchScreen.storyboard in Resources */,
+				BEC19FE51DE1F643003D0012 /* footer-logo.png in Resources */,
+				BE6AAFFE1DE64A7A00EE8AF4 /* SearchResultTableViewCell.xib in Resources */,
+				BE6AAFEE1DE62C5700EE8AF4 /* 8.png in Resources */,
+				BE07A4BB1DE3B72100120470 /* DetailedWeatherTableViewCell.xib in Resources */,
+				BE0A48D91DE4F16C002A396D /* background-clear.png in Resources */,
+				BEC19FF31DE1FEA6003D0012 /* SnapshotDayCollectionViewCell.xib in Resources */,
+				BEC1A0021DE2351D003D0012 /* 15.png in Resources */,
+				BE6AAFF21DE62D3300EE8AF4 /* 1.png in Resources */,
+				BEC19FDD1DE1F47F003D0012 /* background.png in Resources */,
+				BE6AAFF41DE62DFD00EE8AF4 /* 0.png in Resources */,
+				BE4A33181DDCF39A00C7147B /* Assets.xcassets in Resources */,
+				BE07A4BF1DE3B7FD00120470 /* DetailedDayCollectionViewCell.xib in Resources */,
+				BE0A48D71DE4DC39002A396D /* wind-icon-final.png in Resources */,
+				BEC19FEE1DE1FD9C003D0012 /* SnapshotTableViewCell.xib in Resources */,
+				BEC19FFE1DE2351D003D0012 /* 7.png in Resources */,
+				BE6AB0001DE7239700EE8AF4 /* 3.png in Resources */,
+				BE07A4B71DE39EE100120470 /* SimpleWeatherTableViewCell.xib in Resources */,
+				BEC1A0041DE23733003D0012 /* 2.png in Resources */,
+				BEC19FE31DE1F5CD003D0012 /* add-btn.png in Resources */,
+				BE4A33161DDCF39A00C7147B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE4A331F1DDCF39A00C7147B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE4A332A1DDCF39A00C7147B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01C76AF8B1002B2F5F7BAA3B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetOfficeTests/Pods-MetOfficeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66C7A1E0F3C04CB39077EDD5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6FA6C10862F84313FD55F891 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7CC5053E5B1E20A2D38441EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetOfficeTests/Pods-MetOfficeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCBF397ED08ACC048A5FD7F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetOffice/Pods-MetOffice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C65927CD148693B6040380DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DA21C8F57A5499FCFB487504 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetOffice/Pods-MetOffice-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFAEFE4A70F3AFC49348E70D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetOfficeUITests/Pods-MetOfficeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE4A33091DDCF39A00C7147B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEE535541DDE527E003A691B /* NetworkController.swift in Sources */,
+				BEE5354E1DDE4C9C003A691B /* MBDateFormatter.swift in Sources */,
+				BE07A4B61DE39EE100120470 /* SimpleWeatherTableViewCell.swift in Sources */,
+				BE6AAFF81DE6452B00EE8AF4 /* SearchController.swift in Sources */,
+				BEE535461DDE4A5B003A691B /* Day.swift in Sources */,
+				BEC19FF21DE1FEA6003D0012 /* SnapshotDayCollectionViewCell.swift in Sources */,
+				BEC19FF51DE2110B003D0012 /* on.swift in Sources */,
+				BE4A33131DDCF39A00C7147B /* HomeViewController.swift in Sources */,
+				BE07A4B31DE39C7600120470 /* DetailViewController.swift in Sources */,
+				BE11350B1DDEEF66008D8823 /* DetailedForecast.swift in Sources */,
+				BE6AAFFA1DE6465500EE8AF4 /* SearchResult.swift in Sources */,
+				BEE5353F1DDE430D003A691B /* TimeStep.swift in Sources */,
+				BE07A4BA1DE3B72100120470 /* DetailedWeatherTableViewCell.swift in Sources */,
+				BEC19FE91DE1F9B6003D0012 /* SnapshotViewController.swift in Sources */,
+				BE6AAFFD1DE64A7A00EE8AF4 /* SearchResultTableViewCell.swift in Sources */,
+				BEE535501DDE4E5D003A691B /* Site.swift in Sources */,
+				BEE535421DDE450A003A691B /* DictionaryExtension.swift in Sources */,
+				BE1135091DDEEECA008D8823 /* Forecast.swift in Sources */,
+				BE6AAFF61DE6445A00EE8AF4 /* SearchViewController.swift in Sources */,
+				BEE5353D1DDE3DF9003A691B /* Strings.swift in Sources */,
+				BE892B531DE241E40026B52C /* DataStore.swift in Sources */,
+				BEC19FED1DE1FD9C003D0012 /* SnapshotTableViewCell.swift in Sources */,
+				BEC19FE71DE1F7E9003D0012 /* WeatherPagingViewController.swift in Sources */,
+				BE892B511DE2385D0026B52C /* Date+HelperFunctions.swift in Sources */,
+				BE4A33111DDCF39A00C7147B /* AppDelegate.swift in Sources */,
+				BEE535561DDE5AD9003A691B /* ForecastController.swift in Sources */,
+				BEE535521DDE50B4003A691B /* Outlook.swift in Sources */,
+				BE07A4BE1DE3B7FD00120470 /* DetailedDayCollectionViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE4A331D1DDCF39A00C7147B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE4A33261DDCF39A00C7147B /* MetOfficeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE4A33281DDCF39A00C7147B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE4A33311DDCF39A00C7147B /* MetOfficeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE4A33231DDCF39A00C7147B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE4A330C1DDCF39A00C7147B /* MetOffice */;
+			targetProxy = BE4A33221DDCF39A00C7147B /* PBXContainerItemProxy */;
+		};
+		BE4A332E1DDCF39A00C7147B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE4A330C1DDCF39A00C7147B /* MetOffice */;
+			targetProxy = BE4A332D1DDCF39A00C7147B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BE4A33141DDCF39A00C7147B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE4A33151DDCF39A00C7147B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BE4A33191DDCF39A00C7147B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE4A331A1DDCF39A00C7147B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BE4A33331DDCF39A00C7147B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BE4A33341DDCF39A00C7147B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BE4A33361DDCF39A00C7147B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7F7724F3390E119B86C242F /* Pods-MetOffice.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = U5FH5JR68H;
+				INFOPLIST_FILE = MetOffice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pagesuite.MetOffice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d1c504c9-c8b9-420b-9996-18314e59ae37";
+				PROVISIONING_PROFILE_SPECIFIER = WildcaredDev;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BE4A33371DDCF39A00C7147B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55D46E0523F7C81922C19EDF /* Pods-MetOffice.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = U5FH5JR68H;
+				INFOPLIST_FILE = MetOffice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pagesuite.MetOffice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d1c504c9-c8b9-420b-9996-18314e59ae37";
+				PROVISIONING_PROFILE_SPECIFIER = WildcaredDev;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		BE4A33391DDCF39A00C7147B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A1845EE2457CA401A13F94B /* Pods-MetOfficeTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MetOfficeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pagesuite.MetOfficeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MetOffice.app/MetOffice";
+			};
+			name = Debug;
+		};
+		BE4A333A1DDCF39A00C7147B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A08344D1C9FD72E34004CC5B /* Pods-MetOfficeTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MetOfficeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pagesuite.MetOfficeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MetOffice.app/MetOffice";
+			};
+			name = Release;
+		};
+		BE4A333C1DDCF39A00C7147B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4D76740F0A50A7C6D822095 /* Pods-MetOfficeUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = MetOfficeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pagesuite.MetOfficeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MetOffice;
+			};
+			name = Debug;
+		};
+		BE4A333D1DDCF39A00C7147B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6850BA4BB8039A28D06E5E0B /* Pods-MetOfficeUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = MetOfficeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pagesuite.MetOfficeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MetOffice;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE4A33081DDCF39A00C7147B /* Build configuration list for PBXProject "MetOffice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE4A33331DDCF39A00C7147B /* Debug */,
+				BE4A33341DDCF39A00C7147B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE4A33351DDCF39A00C7147B /* Build configuration list for PBXNativeTarget "MetOffice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE4A33361DDCF39A00C7147B /* Debug */,
+				BE4A33371DDCF39A00C7147B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE4A33381DDCF39A00C7147B /* Build configuration list for PBXNativeTarget "MetOfficeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE4A33391DDCF39A00C7147B /* Debug */,
+				BE4A333A1DDCF39A00C7147B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE4A333B1DDCF39A00C7147B /* Build configuration list for PBXNativeTarget "MetOfficeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE4A333C1DDCF39A00C7147B /* Debug */,
+				BE4A333D1DDCF39A00C7147B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE4A33051DDCF39A00C7147B /* Project object */;
+}

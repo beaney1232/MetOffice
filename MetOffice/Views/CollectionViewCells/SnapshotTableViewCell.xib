@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SnapshotTableViewCell" customModule="MetOffice">
+            <rect key="frame" x="0.0" y="0.0" width="530" height="215"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="530" height="215"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1O-C3-8Zm">
+                        <rect key="frame" x="8" y="8" width="514" height="199"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnq-WV-cRr">
+                                <rect key="frame" x="8" y="8" width="498" height="26"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cp6-1M-Tg9">
+                                <rect key="frame" x="8" y="42" width="498" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="M6F-yJ-0bI"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="t3Q-1A-mRL">
+                                <rect key="frame" x="8" y="51" width="498" height="129"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xWy-Hh-gho">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="4YY-ws-Kr5">
+                                <rect key="frame" x="238" y="170" width="39" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="xnq-WV-cRr" secondAttribute="trailing" constant="8" id="1GC-Gz-A5d"/>
+                            <constraint firstItem="xnq-WV-cRr" firstAttribute="top" secondItem="F1O-C3-8Zm" secondAttribute="top" constant="8" id="1y4-j8-136"/>
+                            <constraint firstItem="xnq-WV-cRr" firstAttribute="leading" secondItem="F1O-C3-8Zm" secondAttribute="leading" constant="8" id="2gu-az-NGQ"/>
+                            <constraint firstItem="t3Q-1A-mRL" firstAttribute="leading" secondItem="F1O-C3-8Zm" secondAttribute="leading" constant="8" id="4xm-gV-rqh"/>
+                            <constraint firstAttribute="trailing" secondItem="Cp6-1M-Tg9" secondAttribute="trailing" constant="8" id="5IQ-dM-ES6"/>
+                            <constraint firstAttribute="trailing" secondItem="t3Q-1A-mRL" secondAttribute="trailing" constant="8" id="7VW-OJ-cxo"/>
+                            <constraint firstItem="t3Q-1A-mRL" firstAttribute="top" secondItem="Cp6-1M-Tg9" secondAttribute="bottom" constant="8" id="UUg-QV-4Hy"/>
+                            <constraint firstItem="Cp6-1M-Tg9" firstAttribute="leading" secondItem="F1O-C3-8Zm" secondAttribute="leading" constant="8" id="aaB-Dr-PAt"/>
+                            <constraint firstItem="4YY-ws-Kr5" firstAttribute="centerX" secondItem="F1O-C3-8Zm" secondAttribute="centerX" id="bMK-N0-bwz"/>
+                            <constraint firstAttribute="bottom" secondItem="4YY-ws-Kr5" secondAttribute="bottom" constant="-8" id="h07-rw-yCI"/>
+                            <constraint firstItem="4YY-ws-Kr5" firstAttribute="top" secondItem="t3Q-1A-mRL" secondAttribute="bottom" constant="-10" id="mlP-Ru-D40"/>
+                            <constraint firstItem="Cp6-1M-Tg9" firstAttribute="top" secondItem="xnq-WV-cRr" secondAttribute="bottom" constant="8" id="qOG-F8-85d"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="F1O-C3-8Zm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="2hW-bw-eJf"/>
+                <constraint firstAttribute="trailing" secondItem="F1O-C3-8Zm" secondAttribute="trailing" constant="8" id="dx4-xr-xQC"/>
+                <constraint firstItem="F1O-C3-8Zm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="gqY-HN-NV7"/>
+                <constraint firstAttribute="bottom" secondItem="F1O-C3-8Zm" secondAttribute="bottom" constant="8" id="hX2-ui-lij"/>
+            </constraints>
+            <size key="customSize" width="530" height="215"/>
+            <connections>
+                <outlet property="collectionView" destination="t3Q-1A-mRL" id="GkN-TN-oTR"/>
+                <outlet property="container" destination="F1O-C3-8Zm" id="JI1-A8-4JT"/>
+                <outlet property="pageControl" destination="4YY-ws-Kr5" id="uTt-9L-7Cc"/>
+                <outlet property="siteName" destination="xnq-WV-cRr" id="xUe-bm-30C"/>
+            </connections>
+            <point key="canvasLocation" x="-1" y="-14.5"/>
+        </collectionViewCell>
+    </objects>
+</document>
