@@ -23,6 +23,15 @@ class Site: NSObject, NSCoding {
     var snapshot: Forecast?
     var forecast: DetailedForecast?
     
+    func test() {
+        let mirror = Mirror(reflecting: self)
+        print(mirror)
+    }
+    
+    func propertyNames() -> [String] {
+        return Mirror(reflecting: self).children.flatMap { $0.label }
+    }
+    
     init(json: Dictionary<String, AnyObject>) {
         siteID = json.intForKey(key: "site_id")
         siteName = json.stringForKey(key: "name")
