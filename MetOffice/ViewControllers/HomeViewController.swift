@@ -13,21 +13,25 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var noSitesTitle: UILabel!
     @IBOutlet weak var noSitesDescription: UILabel!
     @IBOutlet weak var addButton: UIButton!
-    
+    public var forecastController: ForecastController = ForecastController.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        ForecastController.shared.subscribeWithBlock(completion: { 
+        self.populateSites()
+    }
+    
+    func populateSites() {
+        ForecastController.shared.subscribeWithBlock(completion: {
             on.main {
                 let toImage = UIImage(named:"background")
                 UIView.transition(with: self.background,
-                                          duration:0.3,
-                                          options: UIViewAnimationOptions.transitionCrossDissolve,
-                                          animations: { self.background.image = toImage },
-                                          completion: nil)
+                                  duration:0.3,
+                                  options: UIViewAnimationOptions.transitionCrossDissolve,
+                                  animations: { self.background.image = toImage },
+                                  completion: nil)
                 guard let sites = ForecastController.shared.sites, sites.count > 0 else {
-                    UIView.animate(withDuration: 0.3, animations: { 
+                    UIView.animate(withDuration: 0.3, animations: {
                         self.noSitesTitle.alpha = 1.0
                         self.noSitesDescription.alpha = 1.0
                         self.addButton.imageView?.image = UIImage(named: "add-btn")?.withRenderingMode(.alwaysTemplate)
@@ -42,7 +46,7 @@ class HomeViewController: UIViewController {
             }
         }, key: "home")
         
-        ForecastController.shared.requestSites()
+        forecastController.requestSites()
     }
     
     override func viewDidAppear(_ animated: Bool) {

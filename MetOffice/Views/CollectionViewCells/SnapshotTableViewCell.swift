@@ -18,7 +18,10 @@ class SnapshotTableViewCell: UICollectionViewCell, UICollectionViewDelegate, UIC
         didSet {
             guard let siteVM = self.siteVM else { return }
             self.siteName.text = siteVM.siteName
-            self.forecast = ForecastViewModel(forecast: siteVM.snapshot!)
+            
+            if let snapshot = siteVM.snapshot {
+                self.forecast = ForecastViewModel(forecast: snapshot)
+            }
         }
     }
     

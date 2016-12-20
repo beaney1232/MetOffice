@@ -1,0 +1,20 @@
+{
+    "data": {
+        "site_id": "324150",
+        "name": "Ashford",
+        "latitude": 51.146,
+        "longitude": 0.8767,
+        "timezone": "Europe/London",
+        "unitary_authority": "Kent",
+        "warning_tag": "Kent",
+        "pollen_tag": "pollen_se",
+        "region_id": "se",
+        "region_name": "London & South East England",
+        "links": {
+            "detailed_forecast": "http://cdn.prod.weathercloud.metoffice.gov.uk:80/forecast?site_id=324150",
+            "snapshot": "http://cdn.prod.weathercloud.metoffice.gov.uk:80/snapshot/324150",
+            "daily_snapshot": "http://cdn.prod.weathercloud.metoffice.gov.uk:80/snapshot/daily/324150",
+            "outlook": "http://cdn.prod.weathercloud.metoffice.gov.uk:80/outlook/region/se"
+        }
+    }
+}
