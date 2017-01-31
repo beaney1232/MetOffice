@@ -27,7 +27,7 @@ class SearchResult {
     }
 }
 
-class SearchResultViewModel {
+struct SearchResultViewModel {
     var searchResult: SearchResult
     
     init(searchResult: SearchResult) {

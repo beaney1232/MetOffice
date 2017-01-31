@@ -15,7 +15,7 @@ class Outlook {
     var periods: [Period]?
     
     init(json: Dictionary<String, AnyObject>) {
-        issueDate = MBDateFormatter.shared.parseDate(date: json.stringForKey(key: "issue_date"), format: "yyyy-MM-dd")
+        issueDate = MBDateFormatter.parseDateShort(date: json.stringForKey(key: "issue_date"))
         regionID = json.stringForKey(key: "")
         regionName = json.stringForKey(key: "")
         
@@ -32,8 +32,8 @@ class Outlook {
         var headlineOutlook: String?
         
         init(json: Dictionary<String, AnyObject>) {
-            startDate = MBDateFormatter.shared.parseDate(date: json.stringForKey(key: "starts_at_the_beginning_of"), format: "yyyy-MM-dd'T'HH:mm:ssz")
-            endDate = MBDateFormatter.shared.parseDate(date: json.stringForKey(key: "ends_at_the_end_of"), format: "yyyy-MM-dd'T'HH:mm:ssz")
+            startDate = MBDateFormatter.parseDateLong(date: json.stringForKey(key: "starts_at_the_beginning_of"))
+            endDate = MBDateFormatter.parseDateLong(date: json.stringForKey(key: "ends_at_the_end_of"))
             nightOutlook = json.stringForKey(key: "night_outlook")
             dayOutLook = json.stringForKey(key: "day_outlook")
             headlineOutlook = json.stringForKey(key: "headline_outlook")

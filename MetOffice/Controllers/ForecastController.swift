@@ -36,52 +36,49 @@ class ForecastController: DataStore {
     }
     
     func requestSites() {
-        let oldSites = fetchSites()
-        var sites = [Site]()
+        guard let oldSites = fetchSites() else {
+            self.sites = [Site]()
+            return
+        }
         
-        if let oldSites = oldSites {
-            
-            if !shouldUpdate() {
-                self.sites = fetchSites()
-                return
-            }
-            
-            let queue = OperationQueue()
-            queue.maxConcurrentOperationCount = 5
-            
-            //This will be the completion block once the queue is complete. The other operations will be building up a list of sites, once they are complete this will fire.
-            let endOp: SiteOperation = SiteOperation(lat: nil, long: nil, completion: { (site) in
-                self.sites = sites
+        var sites = [Site]()
+    
+        if !shouldUpdate() {
+            self.sites = fetchSites()
+            return
+        }
+        
+        let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 5
+        
+        //This will be the completion block once the queue is complete. The other operations will be building up a list of sites, once they are complete this will fire.
+        let endOp: SiteOperation = SiteOperation(lat: nil, long: nil, completion: { (site) in
+            self.sites = sites
+        })
+        
+        for site in oldSites {
+            let siteVM = SiteViewModel(site: site)
+            let siteOp: SiteOperation = SiteOperation(lat: String(siteVM.latitude), long: String(siteVM.longitude), completion: { (site) in
+                if let site = site {
+                    sites.append(site)
+                }
             })
             
-            for site in oldSites {
-                let siteVM = SiteViewModel(site: site)
-                let siteOp: SiteOperation = SiteOperation(lat: String(siteVM.latitude), long: String(siteVM.longitude), completion: { (site) in
-                    if let site = site {
-                        sites.append(site)
-                    }
-                })
-                
-                endOp.addDependency(siteOp)
-                queue.addOperation(siteOp)
-            }
-            
-            queue.addOperation(endOp)
-        } else {
-            self.sites = sites
+            endOp.addDependency(siteOp)
+            queue.addOperation(siteOp)
         }
+        
+        queue.addOperation(endOp)
     }
     
     //MARK: LAST UPDATED FUNCTIONS
     func shouldUpdate() -> Bool {
-        if let lastUpdated = lastStoredDate() {
-            let dateComp = Date().addingTimeInterval(-(60 * 3))
-            if dateComp.isGreaterThanDate(lastUpdated) {
-                return true
-            }
+        guard let lastUpdated = lastStoredDate() else {
+            return false
         }
         
-        return false
+        let dateComp = Date().addingTimeInterval(-(60 * 3))
+        return dateComp.isGreaterThanDate(lastUpdated)
     }
     
     func storeLastUpdated() {
@@ -190,33 +187,34 @@ class ForecastOperation: Operation {
     }
     
     override func main() {
-        if let url = self.url {
-            let sema = DispatchSemaphore(value: 0)
-
-            NetworkController.shared.requestJSON(url: url, completion: { (dict) in
-                guard let dict = dict, let data = dict.dictForKey(key: "data"), let type = self.type else {
-                    return
-                }
-                
-                switch type {
-                case "snapshot":
-                    let forecast = Forecast(json: data)
-                    self.completion(forecast)
-                    break
-                case "detailed":
-                    let forecast = DetailedForecast(json: data)
-                    self.completion(forecast)
-                    break
-                default:
-                    break;
-                }
-                
-                sema.signal()
-            })
-            
-            sema.wait()
-        } else {
+        guard let url = self.url else {
             self.completion(nil)
+            return
         }
+        
+        let sema = DispatchSemaphore(value: 0)
+
+        NetworkController.shared.requestJSON(url: url, completion: { (dict) in
+            guard let dict = dict, let data = dict.dictForKey(key: "data"), let type = self.type else {
+                return
+            }
+            
+            switch type {
+            case "snapshot":
+                let forecast = Forecast(json: data)
+                self.completion(forecast)
+                break
+            case "detailed":
+                let forecast = DetailedForecast(json: data)
+                self.completion(forecast)
+                break
+            default:
+                break;
+            }
+            
+            sema.signal()
+        })
+        
+        sema.wait()
     }
 }

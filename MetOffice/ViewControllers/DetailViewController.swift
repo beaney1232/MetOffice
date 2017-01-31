@@ -97,12 +97,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            if let customCell: SimpleWeatherTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell") as? SimpleWeatherTableViewCell {
-                customCell.forecast = self.forecast
-                customCell.day = self.currentDay
-                return customCell
-            }
+        if indexPath.row == 0, let customCell: SimpleWeatherTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell") as? SimpleWeatherTableViewCell {
+            customCell.forecast = self.forecast
+            customCell.day = self.currentDay
+            return customCell
         } else if indexPath.row == 1 {
             if let customCell: DetailedWeatherTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cellDetailed") as? DetailedWeatherTableViewCell {
                 customCell.day = self.currentDay

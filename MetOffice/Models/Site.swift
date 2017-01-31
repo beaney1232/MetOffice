@@ -95,7 +95,7 @@ struct Links {
     }
 }
 
-class SiteViewModel {
+struct SiteViewModel {
     private var site: Site
     
     init(site: Site) {

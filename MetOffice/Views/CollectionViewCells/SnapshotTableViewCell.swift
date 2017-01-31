@@ -53,16 +53,15 @@ class SnapshotTableViewCell: UICollectionViewCell, UICollectionViewDelegate, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let customCell: SnapshotDayCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? SnapshotDayCollectionViewCell {
-            
-            if let timeStep = forecast?.snapshotTimeSteps?[indexPath.row] {
-                customCell.timeStep = timeStep
-            }
-            
-            return customCell
+        guard let cell: SnapshotDayCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? SnapshotDayCollectionViewCell else {
+            return UICollectionViewCell()
         }
-        
-        return UICollectionViewCell()
+
+        if let timeStep = forecast?.snapshotTimeSteps?[indexPath.row] {
+            cell.timeStep = timeStep
+        }
+            
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

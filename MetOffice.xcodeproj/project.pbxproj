@@ -17,8 +17,6 @@
 		BE07A4BB1DE3B72100120470 /* DetailedWeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE07A4B91DE3B72100120470 /* DetailedWeatherTableViewCell.xib */; };
 		BE07A4BE1DE3B7FD00120470 /* DetailedDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07A4BC1DE3B7FD00120470 /* DetailedDayCollectionViewCell.swift */; };
 		BE07A4BF1DE3B7FD00120470 /* DetailedDayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE07A4BD1DE3B7FD00120470 /* DetailedDayCollectionViewCell.xib */; };
-		BE0A48D71DE4DC39002A396D /* wind-icon-final.png in Resources */ = {isa = PBXBuildFile; fileRef = BE0A48D61DE4DC39002A396D /* wind-icon-final.png */; };
-		BE0A48D91DE4F16C002A396D /* background-clear.png in Resources */ = {isa = PBXBuildFile; fileRef = BE0A48D81DE4F16C002A396D /* background-clear.png */; };
 		BE1135091DDEEECA008D8823 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1135081DDEEECA008D8823 /* Forecast.swift */; };
 		BE11350B1DDEEF66008D8823 /* DetailedForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11350A1DDEEF66008D8823 /* DetailedForecast.swift */; };
 		BE4A33111DDCF39A00C7147B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4A33101DDCF39A00C7147B /* AppDelegate.swift */; };
@@ -27,22 +25,14 @@
 		BE4A331B1DDCF39A00C7147B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4A33191DDCF39A00C7147B /* LaunchScreen.storyboard */; };
 		BE4A33261DDCF39A00C7147B /* MetOfficeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4A33251DDCF39A00C7147B /* MetOfficeTests.swift */; };
 		BE4A33311DDCF39A00C7147B /* MetOfficeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4A33301DDCF39A00C7147B /* MetOfficeUITests.swift */; };
-		BE5A2B391E41182D0035DBCF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE5A2B381E41182D0035DBCF /* Images.xcassets */; };
-		BE6AAFEE1DE62C5700EE8AF4 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = BE6AAFED1DE62C5700EE8AF4 /* 8.png */; };
-		BE6AAFF21DE62D3300EE8AF4 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = BE6AAFF11DE62D3300EE8AF4 /* 1.png */; };
-		BE6AAFF41DE62DFD00EE8AF4 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = BE6AAFF31DE62DFD00EE8AF4 /* 0.png */; };
 		BE6AAFF61DE6445A00EE8AF4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAFF51DE6445A00EE8AF4 /* SearchViewController.swift */; };
 		BE6AAFF81DE6452B00EE8AF4 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAFF71DE6452B00EE8AF4 /* SearchController.swift */; };
 		BE6AAFFA1DE6465500EE8AF4 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAFF91DE6465500EE8AF4 /* SearchResult.swift */; };
 		BE6AAFFD1DE64A7A00EE8AF4 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAFFB1DE64A7A00EE8AF4 /* SearchResultTableViewCell.swift */; };
 		BE6AAFFE1DE64A7A00EE8AF4 /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE6AAFFC1DE64A7A00EE8AF4 /* SearchResultTableViewCell.xib */; };
-		BE6AB0001DE7239700EE8AF4 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = BE6AAFFF1DE7239700EE8AF4 /* 3.png */; };
+		BE6F5EB41E41338500927C5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE6F5EB31E41338500927C5D /* Images.xcassets */; };
 		BE892B511DE2385D0026B52C /* Date+HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE892B501DE2385D0026B52C /* Date+HelperFunctions.swift */; };
 		BE892B531DE241E40026B52C /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE892B521DE241E40026B52C /* DataStore.swift */; };
-		BEC19FDD1DE1F47F003D0012 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FDC1DE1F47F003D0012 /* background.png */; };
-		BEC19FE11DE1F566003D0012 /* settings-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FE01DE1F566003D0012 /* settings-btn.png */; };
-		BEC19FE31DE1F5CD003D0012 /* add-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FE21DE1F5CD003D0012 /* add-btn.png */; };
-		BEC19FE51DE1F643003D0012 /* footer-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FE41DE1F643003D0012 /* footer-logo.png */; };
 		BEC19FE71DE1F7E9003D0012 /* WeatherPagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC19FE61DE1F7E9003D0012 /* WeatherPagingViewController.swift */; };
 		BEC19FE91DE1F9B6003D0012 /* SnapshotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC19FE81DE1F9B6003D0012 /* SnapshotViewController.swift */; };
 		BEC19FED1DE1FD9C003D0012 /* SnapshotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC19FEB1DE1FD9C003D0012 /* SnapshotTableViewCell.swift */; };
@@ -50,12 +40,6 @@
 		BEC19FF21DE1FEA6003D0012 /* SnapshotDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC19FF01DE1FEA6003D0012 /* SnapshotDayCollectionViewCell.swift */; };
 		BEC19FF31DE1FEA6003D0012 /* SnapshotDayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FF11DE1FEA6003D0012 /* SnapshotDayCollectionViewCell.xib */; };
 		BEC19FF51DE2110B003D0012 /* on.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC19FF41DE2110B003D0012 /* on.swift */; };
-		BEC19FFE1DE2351D003D0012 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FF91DE2351D003D0012 /* 7.png */; };
-		BEC19FFF1DE2351D003D0012 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FFA1DE2351D003D0012 /* 9.png */; };
-		BEC1A0001DE2351D003D0012 /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FFB1DE2351D003D0012 /* 12.png */; };
-		BEC1A0011DE2351D003D0012 /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FFC1DE2351D003D0012 /* 13.png */; };
-		BEC1A0021DE2351D003D0012 /* 15.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC19FFD1DE2351D003D0012 /* 15.png */; };
-		BEC1A0041DE23733003D0012 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC1A0031DE23733003D0012 /* 2.png */; };
 		BEC8521D1E09D25C00E7D156 /* HomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8521C1E09D25C00E7D156 /* HomeTests.swift */; };
 		BEC8521F1E09D88F00E7D156 /* MockSiteData.json in Resources */ = {isa = PBXBuildFile; fileRef = BEC8521E1E09D88F00E7D156 /* MockSiteData.json */; };
 		BEC852201E09DA7E00E7D156 /* MockSiteData.json in Resources */ = {isa = PBXBuildFile; fileRef = BEC8521E1E09D88F00E7D156 /* MockSiteData.json */; };
@@ -103,8 +87,6 @@
 		BE07A4B91DE3B72100120470 /* DetailedWeatherTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailedWeatherTableViewCell.xib; sourceTree = "<group>"; };
 		BE07A4BC1DE3B7FD00120470 /* DetailedDayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedDayCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE07A4BD1DE3B7FD00120470 /* DetailedDayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailedDayCollectionViewCell.xib; sourceTree = "<group>"; };
-		BE0A48D61DE4DC39002A396D /* wind-icon-final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wind-icon-final.png"; sourceTree = "<group>"; };
-		BE0A48D81DE4F16C002A396D /* background-clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-clear.png"; sourceTree = "<group>"; };
 		BE1135081DDEEECA008D8823 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		BE11350A1DDEEF66008D8823 /* DetailedForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedForecast.swift; sourceTree = "<group>"; };
 		BE4A330D1DDCF39A00C7147B /* MetOffice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetOffice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,22 +101,14 @@
 		BE4A332C1DDCF39A00C7147B /* MetOfficeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetOfficeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4A33301DDCF39A00C7147B /* MetOfficeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetOfficeUITests.swift; sourceTree = "<group>"; };
 		BE4A33321DDCF39A00C7147B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE5A2B381E41182D0035DBCF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		BE6AAFED1DE62C5700EE8AF4 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
-		BE6AAFF11DE62D3300EE8AF4 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
-		BE6AAFF31DE62DFD00EE8AF4 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
 		BE6AAFF51DE6445A00EE8AF4 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BE6AAFF71DE6452B00EE8AF4 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		BE6AAFF91DE6465500EE8AF4 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		BE6AAFFB1DE64A7A00EE8AF4 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		BE6AAFFC1DE64A7A00EE8AF4 /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
-		BE6AAFFF1DE7239700EE8AF4 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		BE6F5EB31E41338500927C5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BE892B501DE2385D0026B52C /* Date+HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+HelperFunctions.swift"; sourceTree = "<group>"; };
 		BE892B521DE241E40026B52C /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
-		BEC19FDC1DE1F47F003D0012 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
-		BEC19FE01DE1F566003D0012 /* settings-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-btn.png"; sourceTree = "<group>"; };
-		BEC19FE21DE1F5CD003D0012 /* add-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add-btn.png"; sourceTree = "<group>"; };
-		BEC19FE41DE1F643003D0012 /* footer-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "footer-logo.png"; sourceTree = "<group>"; };
 		BEC19FE61DE1F7E9003D0012 /* WeatherPagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherPagingViewController.swift; sourceTree = "<group>"; };
 		BEC19FE81DE1F9B6003D0012 /* SnapshotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotViewController.swift; sourceTree = "<group>"; };
 		BEC19FEB1DE1FD9C003D0012 /* SnapshotTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotTableViewCell.swift; sourceTree = "<group>"; };
@@ -142,12 +116,6 @@
 		BEC19FF01DE1FEA6003D0012 /* SnapshotDayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotDayCollectionViewCell.swift; sourceTree = "<group>"; };
 		BEC19FF11DE1FEA6003D0012 /* SnapshotDayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SnapshotDayCollectionViewCell.xib; sourceTree = "<group>"; };
 		BEC19FF41DE2110B003D0012 /* on.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = on.swift; sourceTree = "<group>"; };
-		BEC19FF91DE2351D003D0012 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
-		BEC19FFA1DE2351D003D0012 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
-		BEC19FFB1DE2351D003D0012 /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
-		BEC19FFC1DE2351D003D0012 /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13.png; sourceTree = "<group>"; };
-		BEC19FFD1DE2351D003D0012 /* 15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 15.png; sourceTree = "<group>"; };
-		BEC1A0031DE23733003D0012 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		BEC8521C1E09D25C00E7D156 /* HomeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTests.swift; sourceTree = "<group>"; };
 		BEC8521E1E09D88F00E7D156 /* MockSiteData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockSiteData.json; sourceTree = "<group>"; };
 		BEE5353C1DDE3DF9003A691B /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
@@ -270,7 +238,6 @@
 				BE4A33191DDCF39A00C7147B /* LaunchScreen.storyboard */,
 				BE4A331C1DDCF39A00C7147B /* Info.plist */,
 				BEE5353C1DDE3DF9003A691B /* Strings.swift */,
-				BE5A2B381E41182D0035DBCF /* Images.xcassets */,
 			);
 			path = MetOffice;
 			sourceTree = "<group>";
@@ -341,31 +308,9 @@
 		BEC19FDA1DE1F442003D0012 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				BEC19FDF1DE1F54E003D0012 /* Icons */,
-				BEC19FDB1DE1F45B003D0012 /* Images */,
+				BE6F5EB31E41338500927C5D /* Images.xcassets */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		BEC19FDB1DE1F45B003D0012 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				BEC19FDC1DE1F47F003D0012 /* background.png */,
-				BEC19FE41DE1F643003D0012 /* footer-logo.png */,
-				BE0A48D81DE4F16C002A396D /* background-clear.png */,
-			);
-			path = Images;
-			sourceTree = "<group>";
-		};
-		BEC19FDF1DE1F54E003D0012 /* Icons */ = {
-			isa = PBXGroup;
-			children = (
-				BEC19FF61DE23212003D0012 /* Weather */,
-				BEC19FE21DE1F5CD003D0012 /* add-btn.png */,
-				BE0A48D61DE4DC39002A396D /* wind-icon-final.png */,
-				BEC19FE01DE1F566003D0012 /* settings-btn.png */,
-			);
-			path = Icons;
 			sourceTree = "<group>";
 		};
 		BEC19FEA1DE1FD57003D0012 /* TableCells */ = {
@@ -392,23 +337,6 @@
 				BE07A4BD1DE3B7FD00120470 /* DetailedDayCollectionViewCell.xib */,
 			);
 			path = CollectionViewCells;
-			sourceTree = "<group>";
-		};
-		BEC19FF61DE23212003D0012 /* Weather */ = {
-			isa = PBXGroup;
-			children = (
-				BE6AAFF31DE62DFD00EE8AF4 /* 0.png */,
-				BE6AAFF11DE62D3300EE8AF4 /* 1.png */,
-				BEC1A0031DE23733003D0012 /* 2.png */,
-				BE6AAFFF1DE7239700EE8AF4 /* 3.png */,
-				BEC19FF91DE2351D003D0012 /* 7.png */,
-				BE6AAFED1DE62C5700EE8AF4 /* 8.png */,
-				BEC19FFA1DE2351D003D0012 /* 9.png */,
-				BEC19FFB1DE2351D003D0012 /* 12.png */,
-				BEC19FFC1DE2351D003D0012 /* 13.png */,
-				BEC19FFD1DE2351D003D0012 /* 15.png */,
-			);
-			name = Weather;
 			sourceTree = "<group>";
 		};
 		BEE535401DDE44DF003A691B /* Extensions */ = {
@@ -489,6 +417,7 @@
 				BE4A33291DDCF39A00C7147B /* Frameworks */,
 				BE4A332A1DDCF39A00C7147B /* Resources */,
 				DFAEFE4A70F3AFC49348E70D /* [CP] Copy Pods Resources */,
+				B9FAAA0356E02E3CA665089D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -552,31 +481,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEC1A0011DE2351D003D0012 /* 13.png in Resources */,
-				BEC1A0001DE2351D003D0012 /* 12.png in Resources */,
-				BEC19FFF1DE2351D003D0012 /* 9.png in Resources */,
-				BEC19FE11DE1F566003D0012 /* settings-btn.png in Resources */,
 				BE4A331B1DDCF39A00C7147B /* LaunchScreen.storyboard in Resources */,
-				BEC19FE51DE1F643003D0012 /* footer-logo.png in Resources */,
+				BE6F5EB41E41338500927C5D /* Images.xcassets in Resources */,
 				BE6AAFFE1DE64A7A00EE8AF4 /* SearchResultTableViewCell.xib in Resources */,
-				BE6AAFEE1DE62C5700EE8AF4 /* 8.png in Resources */,
 				BE07A4BB1DE3B72100120470 /* DetailedWeatherTableViewCell.xib in Resources */,
-				BE5A2B391E41182D0035DBCF /* Images.xcassets in Resources */,
-				BE0A48D91DE4F16C002A396D /* background-clear.png in Resources */,
 				BEC19FF31DE1FEA6003D0012 /* SnapshotDayCollectionViewCell.xib in Resources */,
-				BEC1A0021DE2351D003D0012 /* 15.png in Resources */,
 				BEC852201E09DA7E00E7D156 /* MockSiteData.json in Resources */,
-				BE6AAFF21DE62D3300EE8AF4 /* 1.png in Resources */,
-				BEC19FDD1DE1F47F003D0012 /* background.png in Resources */,
-				BE6AAFF41DE62DFD00EE8AF4 /* 0.png in Resources */,
 				BE07A4BF1DE3B7FD00120470 /* DetailedDayCollectionViewCell.xib in Resources */,
-				BE0A48D71DE4DC39002A396D /* wind-icon-final.png in Resources */,
 				BEC19FEE1DE1FD9C003D0012 /* SnapshotTableViewCell.xib in Resources */,
-				BEC19FFE1DE2351D003D0012 /* 7.png in Resources */,
-				BE6AB0001DE7239700EE8AF4 /* 3.png in Resources */,
 				BE07A4B71DE39EE100120470 /* SimpleWeatherTableViewCell.xib in Resources */,
-				BEC1A0041DE23733003D0012 /* 2.png in Resources */,
-				BEC19FE31DE1F5CD003D0012 /* add-btn.png in Resources */,
 				BE4A33161DDCF39A00C7147B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -626,7 +539,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		6FA6C10862F84313FD55F891 /* [CP] Check Pods Manifest.lock */ = {
@@ -641,7 +554,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7CC5053E5B1E20A2D38441EE /* [CP] Embed Pods Frameworks */ = {
@@ -657,6 +570,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetOfficeTests/Pods-MetOfficeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9FAAA0356E02E3CA665089D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetOfficeUITests/Pods-MetOfficeUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BCBF397ED08ACC048A5FD7F8 /* [CP] Embed Pods Frameworks */ = {
@@ -686,7 +614,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		DA21C8F57A5499FCFB487504 /* [CP] Copy Pods Resources */ = {

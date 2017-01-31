@@ -9,18 +9,31 @@
 import Foundation
 
 class MBDateFormatter {
-    static var shared = MBDateFormatter()
+    static let dfLong: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssz"
+        return formatter
+    }()
     
-    func parseDate(date: String?, format: String) -> Date? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = format
-        
-        if let date = date {
-            return dateFormatter.date(from: date)
-        } else {
+    static let dfShort: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter
+    }()
+    
+    static func parseDateLong(date: String?) -> Date? {
+        guard let date = date else {
             return nil
         }
+        
+        return dfLong.date(from: date)
     }
     
-    
+    static func parseDateShort(date: String?) -> Date? {
+        guard let date = date else {
+            return nil
+        }
+        
+        return dfShort.date(from: date)
+    }
 }

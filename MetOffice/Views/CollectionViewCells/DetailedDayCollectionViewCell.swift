@@ -59,11 +59,6 @@ class DetailedDayCollectionViewCell: UICollectionViewCell {
         timeStamp.text = timeStepVM.startTime
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     override var isSelected: Bool {
         didSet {
             if isSelected {

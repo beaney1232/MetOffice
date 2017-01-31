@@ -41,29 +41,30 @@ class SearchOperation: Operation {
     }
     
     override func main() {
-        if let url = self.url {
-            let sema = DispatchSemaphore(value: 0)
-            
-            NetworkController.shared.requestJSONArray(url: url, completion: { (dictArr) in
-                guard let dictArr = dictArr else {
-                    return
-                }
-                
-                var searchResults = [SearchResult]()
-                
-                for dict in dictArr {
-                    let searchResult = SearchResult(json: dict)
-                    searchResults.append(searchResult)
-                }
-                
-                self.completion(searchResults)
-                
-                sema.signal()
-            })
-            
-            sema.wait()
-        } else {
-            self.completion(nil)
+        guard let url = self.url else {
+            completion(nil)
+            return
         }
+        
+        let sema = DispatchSemaphore(value: 0)
+        
+        NetworkController.shared.requestJSONArray(url: url, completion: { (dictArr) in
+            guard let dictArr = dictArr else {
+                return
+            }
+            
+            var searchResults = [SearchResult]()
+            
+            for dict in dictArr {
+                let searchResult = SearchResult(json: dict)
+                searchResults.append(searchResult)
+            }
+            
+            self.completion(searchResults)
+            
+            sema.signal()
+        })
+        
+        sema.wait()
     }
 }

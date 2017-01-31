@@ -32,8 +32,8 @@ class TimeStep: NSObject, NSCoding {
     
     init(json: Dictionary<String, AnyObject>) {
         //SNAPSHOT VARIABLES
-        startDate = MBDateFormatter.shared.parseDate(date: json.stringForKey(key: "datetime_start"), format: "yyyy-MM-dd'T'HH:mm:ssz")
-        endDate = MBDateFormatter.shared.parseDate(date: json.stringForKey(key: "datetime_end"), format: "yyyy-MM-dd'T'HH:mm:ssz")
+        startDate = MBDateFormatter.parseDateLong(date: json.stringForKey(key: "datetime_start"))
+        endDate = MBDateFormatter.parseDateLong(date: json.stringForKey(key: "datetime_end"))
         feelsTemp = json.floatForKey(key: "feels_like_temp_celsius")
         actualTemp = json.floatForKey(key: "actual_temp_celsius")
         symbolID = json.intForKey(key: "weather_symbol")
@@ -89,7 +89,7 @@ class TimeStep: NSObject, NSCoding {
     }
 }
 
-class TimeStepViewModel {
+struct TimeStepViewModel {
     var step: TimeStep
     
     init(step: TimeStep) {

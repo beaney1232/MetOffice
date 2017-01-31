@@ -32,11 +32,11 @@ class Day: NSObject, NSCoding {
     var nightWeatherSymbol: Int?
     
     init(json: Dictionary<String, AnyObject>) {
-        date = MBDateFormatter.shared.parseDate(date: json.stringForKey(key: "date"), format: "yyyy-MM-dd")
+        date = MBDateFormatter.parseDateShort(date: json.stringForKey(key: "date"))
         sunWillRise = json.boolForKey(key: "sun_will_rise")
         sunWillSet = json.boolForKey(key: "sun_will_set")
-        sunRiseDate = MBDateFormatter.shared.parseDate(date: json.stringForKey(key: "sunrise_datetime"), format: "yyyy-MM-dd'T'HH:mm:ssz")
-        sunSetDate = MBDateFormatter.shared.parseDate(date: json.stringForKey(key: "sunset_datetime"), format: "yyyy-MM-dd'T'HH:mm:ssz")
+        sunRiseDate = MBDateFormatter.parseDateLong(date: json.stringForKey(key: "sunrise_datetime"))
+        sunSetDate = MBDateFormatter.parseDateLong(date: json.stringForKey(key: "sunset_datetime"))
         
         dayActualTemp = json.floatForKey(key: "day_actual_temp_celsius")
         dayFeelsTemp = json.floatForKey(key: "day_feels_like_temp_celsius")
@@ -98,7 +98,7 @@ class Day: NSObject, NSCoding {
     }
 }
 
-class DayViewModel {
+struct DayViewModel {
     private var day: Day
     
     init(day: Day) {

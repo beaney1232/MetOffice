@@ -13,7 +13,7 @@ class DetailedForecast: Forecast {
     
     override init(json: Dictionary<String, AnyObject>) {
         super.init(json: json)
-        issuedDate = MBDateFormatter.shared.parseDate(date: json.stringForKey(key: "issued_date"), format: "yyyy-MM-dd'T'HH:mm:ssz")
+        issuedDate = MBDateFormatter.parseDateLong(date: json.stringForKey(key: "issued_date"))
     }
     
     required init(coder aDecoder: NSCoder) {
