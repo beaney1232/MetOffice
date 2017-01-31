@@ -7,26 +7,18 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Forecast: NSObject, NSCoding {
-    var days: [Day]?
+class Forecast: Object {
+    var days = List<Day>()
     
-    init(json: Dictionary<String, AnyObject>) {
+    convenience init(json: Dictionary<String, AnyObject>) {
         if let days = json.arrayForKey(key: "days") {
-            self.days = [Day]()
             for day in days {
                 let objDay = Day(json: day)
-                self.days?.append(objDay)
+                self.days.append(objDay)
             }
         }
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        days = aDecoder.decodeObject(forKey: "days") as? [Day]
-    }
-    
-    func encode(with coder: NSCoder) {
-        coder.encode(self.days , forKey: "days")
     }
 }
 
@@ -41,7 +33,7 @@ class ForecastViewModel {
         var timesteps = [TimeStep]()
         
         var index = 0
-        for day in forecast?.days ?? [] {
+        for day in forecast?.days ?? List<Day> {
             for timestep in day.timeSteps ?? [] {
                 if index < 15 {
                     timesteps.append(timestep)

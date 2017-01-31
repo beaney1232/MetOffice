@@ -15,16 +15,6 @@ class DetailedForecast: Forecast {
         super.init(json: json)
         issuedDate = MBDateFormatter.parseDateLong(date: json.stringForKey(key: "issued_date"))
     }
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        issuedDate = aDecoder.decodeObject(forKey: "issuedDate") as? Date
-    }
-    
-    override func encode(with coder: NSCoder) {
-        super.encode(with: coder)
-        coder.encode(self.issuedDate , forKey: "issuedDate")
-    }
 }
 
 class DetailedForecastViewModel {
@@ -46,7 +36,7 @@ class DetailedForecastViewModel {
         return self.forecast.issuedDate != nil ? dateFormatter.string(from: self.forecast.issuedDate!) : ""
     }
     
-    var days: [Day] {
-        return self.forecast.days!
+    var days: List<Day> {
+        return self.forecast.days
     }
 }

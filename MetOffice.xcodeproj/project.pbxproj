@@ -31,6 +31,7 @@
 		BE6AAFFD1DE64A7A00EE8AF4 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6AAFFB1DE64A7A00EE8AF4 /* SearchResultTableViewCell.swift */; };
 		BE6AAFFE1DE64A7A00EE8AF4 /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE6AAFFC1DE64A7A00EE8AF4 /* SearchResultTableViewCell.xib */; };
 		BE6F5EB41E41338500927C5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE6F5EB31E41338500927C5D /* Images.xcassets */; };
+		BE6F5EB81E41385F00927C5D /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6F5EB71E41385F00927C5D /* RealmHelper.swift */; };
 		BE892B511DE2385D0026B52C /* Date+HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE892B501DE2385D0026B52C /* Date+HelperFunctions.swift */; };
 		BE892B531DE241E40026B52C /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE892B521DE241E40026B52C /* DataStore.swift */; };
 		BEC19FE71DE1F7E9003D0012 /* WeatherPagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC19FE61DE1F7E9003D0012 /* WeatherPagingViewController.swift */; };
@@ -107,6 +108,7 @@
 		BE6AAFFB1DE64A7A00EE8AF4 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		BE6AAFFC1DE64A7A00EE8AF4 /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
 		BE6F5EB31E41338500927C5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BE6F5EB71E41385F00927C5D /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		BE892B501DE2385D0026B52C /* Date+HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+HelperFunctions.swift"; sourceTree = "<group>"; };
 		BE892B521DE241E40026B52C /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		BEC19FE61DE1F7E9003D0012 /* WeatherPagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherPagingViewController.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 			children = (
 				BEE5354D1DDE4C9C003A691B /* MBDateFormatter.swift */,
 				BEC19FF41DE2110B003D0012 /* on.swift */,
+				BE6F5EB71E41385F00927C5D /* RealmHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				BE07A4B61DE39EE100120470 /* SimpleWeatherTableViewCell.swift in Sources */,
 				BE6AAFF81DE6452B00EE8AF4 /* SearchController.swift in Sources */,
 				BEE535461DDE4A5B003A691B /* Day.swift in Sources */,
+				BE6F5EB81E41385F00927C5D /* RealmHelper.swift in Sources */,
 				BEC19FF21DE1FEA6003D0012 /* SnapshotDayCollectionViewCell.swift in Sources */,
 				BEC19FF51DE2110B003D0012 /* on.swift in Sources */,
 				BE4A33131DDCF39A00C7147B /* HomeViewController.swift in Sources */,

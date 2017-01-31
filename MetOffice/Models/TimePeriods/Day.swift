@@ -8,46 +8,49 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
-class Day: NSObject, NSCoding {
+class Day: Object {
     //MARK: SNAPSHOT VARIABLES
-    var date: Date?
-    var timeSteps: [TimeStep]?
+    dynamic var date: Date?
+    dynamic var timeSteps: [TimeStep]?
     
     //I hope the next two variables are always true.
-    var sunWillRise: Bool?
-    var sunWillSet: Bool?
-    var sunRiseDate: Date?
-    var sunSetDate: Date?
+    var sunWillRise = RealmOptional<Bool>()
+    var sunWillSet = RealmOptional<Bool>()
+    dynamic var sunRiseDate: Date?
+    dynamic var sunSetDate: Date?
     
-    var dayActualTemp: Float?
-    var dayFeelsTemp: Float?
-    var dayWeatherType: String?
-    var dayWeatherSymbol: Int?
-    var dayAirQualityIndex: Int?
+    var dayActualTemp = RealmOptional<Float>()
+    var dayFeelsTemp = RealmOptional<Float>()
+    dynamic var dayWeatherType: String?
+    var dayWeatherSymbol = RealmOptional<Int>()
+    var dayAirQualityIndex = RealmOptional<Int>()
     
-    var nightActualTemp: Float?
-    var nightFeelsTemp: Float?
-    var nightWeatherType: String?
-    var nightWeatherSymbol: Int?
+    var nightActualTemp = RealmOptional<Float>()
+    var nightFeelsTemp = RealmOptional<Float>()
+    dynamic var nightWeatherType: String?
+    var nightWeatherSymbol = RealmOptional<Int>()
     
     init(json: Dictionary<String, AnyObject>) {
+        
+        
         date = MBDateFormatter.parseDateShort(date: json.stringForKey(key: "date"))
-        sunWillRise = json.boolForKey(key: "sun_will_rise")
-        sunWillSet = json.boolForKey(key: "sun_will_set")
+        sunWillRise = R.bool(json.boolForKey(key: "sun_will_rise"))
+        sunWillSet = R.bool(json.boolForKey(key: "sun_will_set"))
         sunRiseDate = MBDateFormatter.parseDateLong(date: json.stringForKey(key: "sunrise_datetime"))
         sunSetDate = MBDateFormatter.parseDateLong(date: json.stringForKey(key: "sunset_datetime"))
         
-        dayActualTemp = json.floatForKey(key: "day_actual_temp_celsius")
-        dayFeelsTemp = json.floatForKey(key: "day_feels_like_temp_celsius")
+        dayActualTemp = R.float(json.floatForKey(key: "day_actual_temp_celsius"))
+        dayFeelsTemp = R.float(json.floatForKey(key: "day_feels_like_temp_celsius"))
         dayWeatherType = json.stringForKey(key: "day_weather_type")
-        dayWeatherSymbol = json.intForKey(key: "day_weather_symbol")
-        dayAirQualityIndex = json.intForKey(key: "day_air_quality_index")
+        dayWeatherSymbol = R.int(json.intForKey(key: "day_weather_symbol"))
+        dayAirQualityIndex = R.int(json.intForKey(key: "day_air_quality_index"))
         
-        nightActualTemp = json.floatForKey(key: "night_actual_temp_celsius")
-        nightFeelsTemp = json.floatForKey(key: "night_feels_like_temp_celsius")
+        nightActualTemp = R.float(json.floatForKey(key: "night_actual_temp_celsius"))
+        nightFeelsTemp = R.float(json.floatForKey(key: "night_feels_like_temp_celsius"))
         nightWeatherType = json.stringForKey(key: "night_weather_type")
-        nightWeatherSymbol = json.intForKey(key: "night_weather_symbol")
+        nightWeatherSymbol = R.int(json.intForKey(key: "night_weather_symbol"))
         
         if let steps = json.arrayForKey(key: "time_steps") {
             timeSteps = [TimeStep]()
@@ -59,42 +62,6 @@ class Day: NSObject, NSCoding {
                 }
             }
         }
-    }
-    
-    required init(coder aDecoder: NSCoder) {        
-        date = aDecoder.decodeObject(forKey: "date") as? Date
-        timeSteps = aDecoder.decodeObject(forKey: "timeSteps") as? [TimeStep]
-        sunWillRise = aDecoder.decodeObject(forKey: "sunWillRise") as? Bool
-        sunWillSet = aDecoder.decodeObject(forKey: "sunWillSet") as? Bool
-        sunRiseDate = aDecoder.decodeObject(forKey: "sunRiseDate") as? Date
-        sunSetDate = aDecoder.decodeObject(forKey: "sunSetDate") as? Date
-        dayActualTemp = aDecoder.decodeObject(forKey: "dayActualTemp") as? Float
-        dayFeelsTemp = aDecoder.decodeObject(forKey: "dayFeelsTemp") as? Float
-        dayWeatherType = aDecoder.decodeObject(forKey: "dayWeatherType") as? String
-        dayWeatherSymbol = aDecoder.decodeObject(forKey: "dayWeatherSymbol") as? Int
-        dayAirQualityIndex = aDecoder.decodeObject(forKey: "dayAirQualityIndex") as? Int
-        nightActualTemp = aDecoder.decodeObject(forKey: "nightActualTemp") as? Float
-        nightFeelsTemp = aDecoder.decodeObject(forKey: "nightFeelsTemp") as? Float
-        nightWeatherType = aDecoder.decodeObject(forKey: "nightWeatherType") as? String
-        nightWeatherSymbol = aDecoder.decodeObject(forKey: "nightWeatherSymbol") as? Int
-    }
-    
-    func encode(with coder: NSCoder) {
-        coder.encode(self.date , forKey: "date")
-        coder.encode(self.timeSteps, forKey: "timeSteps")
-        coder.encode(self.sunWillRise, forKey: "sunWillRise")
-        coder.encode(self.sunWillSet, forKey: "sunWillSet")
-        coder.encode(self.sunRiseDate, forKey: "sunRiseDate")
-        coder.encode(self.sunSetDate, forKey: "sunSetDate")
-        coder.encode(self.dayActualTemp, forKey: "dayActualTemp")
-        coder.encode(self.dayFeelsTemp, forKey: "dayFeelsTemp")
-        coder.encode(self.dayWeatherType, forKey: "dayWeatherType")
-        coder.encode(self.dayWeatherSymbol, forKey: "dayWeatherSymbol")
-        coder.encode(self.dayAirQualityIndex, forKey: "dayAirQualityIndex")
-        coder.encode(self.nightActualTemp, forKey: "nightActualTemp")
-        coder.encode(self.nightWeatherType, forKey: "nightWeatherType")
-        coder.encode(self.nightWeatherSymbol, forKey: "nightWeatherSymbol")
-
     }
 }
 

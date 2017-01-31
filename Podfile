@@ -8,7 +8,7 @@ target 'MetOffice' do
   # Pods for MetOffice
 
   pod 'Alamofire', '~> 4.0'
-  pod 'Realm'
+  pod 'RealmSwift'
 
   target 'MetOfficeTests' do
     inherit! :search_paths
