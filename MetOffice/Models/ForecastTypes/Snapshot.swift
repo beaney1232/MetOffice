@@ -9,10 +9,17 @@
 import Foundation
 import RealmSwift
 
-class Forecast: Object {
-    var days = List<Day>()
+protocol Forecast {
+    var days: List<Day> { get set }
+    //Extended in Forecast extension to provide default functionality for every conformant.
+    func configureBase(json: Dictionary<String, AnyObject>)
     
-    convenience init(json: Dictionary<String, AnyObject>) {
+    //Usually calls configureBase first, then adds extra.
+    func configure(json: Dictionary<String, AnyObject>)
+}
+
+extension Forecast {
+    func configureBase(json: Dictionary<String, AnyObject>) {
         if let days = json.arrayForKey(key: "days") {
             for day in days {
                 let objDay = Day(json: day)
@@ -22,10 +29,23 @@ class Forecast: Object {
     }
 }
 
-class ForecastViewModel {
-    var forecast: Forecast?
+class Snapshot: Object, Forecast {
+    var days: List<Day> = List<Day>()
     
-    init(forecast: Forecast) {
+    func configure(json: Dictionary<String, AnyObject>) {
+        configureBase(json: json)
+    }
+    
+    convenience init(json: Dictionary<String, AnyObject>) {
+        self.init()
+        configure(json: json)
+    }
+}
+
+class ForecastViewModel {
+    var forecast: Snapshot?
+    
+    init(forecast: Snapshot) {
         self.forecast = forecast
     }
     
@@ -33,7 +53,7 @@ class ForecastViewModel {
         var timesteps = [TimeStep]()
         
         var index = 0
-        for day in forecast?.days ?? List<Day> {
+        for day in forecast?.days ?? List<Day>() {
             for timestep in day.timeSteps ?? [] {
                 if index < 15 {
                     timesteps.append(timestep)
