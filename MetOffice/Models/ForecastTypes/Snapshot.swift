@@ -34,7 +34,7 @@ class ForecastViewModel {
         
         var index = 0
         for day in forecast?.days ?? List<Day>() {
-            for timestep in day.timeSteps ?? [] {
+            for timestep in day.timeSteps {
                 if index < 15 {
                     timesteps.append(timestep)
                     index += 1

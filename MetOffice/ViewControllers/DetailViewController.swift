@@ -12,58 +12,38 @@ import UIKit
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    
     @IBOutlet weak var siteTitle: UILabel!
     
     var site: Site? {
         didSet {
-            let siteVM = SiteViewModel(site: site!)
-            self.siteTitle.text = siteVM.siteName
+            guard let site = site else { return }
+            populate(site: site)
         }
     }
     
-    var index: Int? {
-        didSet {
-            guard let index = index else { return }
-            if let sites = ForecastController.shared.sites, index <= sites.count {
-                self.site = sites[index - 1]
-                self.forecast = self.site!.forecast
-            }
-            
-            ForecastController.shared.subscribeWithBlock(completion: { 
-                self.forecast = ForecastController.shared.sites![index - 1].forecast
-            }, key: "detail-\(index)")
-        }
-    }
+    var index: Int?
+    internal var forecast: DetailedForecast?
+    internal var forecastVM: DetailedForecastViewModel?
+    internal var currentDay: Day?
+    internal var currentDayVM: DayViewModel?
     
-    var forecast: DetailedForecast? {
-        didSet {
-            guard let forecast = self.forecast else { return }
-            self.forecastVM = DetailedForecastViewModel(forecast: forecast)
-        }
-    }
-    
-    var forecastVM: DetailedForecastViewModel? {
-        didSet {
-            guard let forecastVM = self.forecastVM else { return }
-            self.currentDay = forecastVM.days[0]
-            self.configureCollectionView()
-        }
-    }
-    
-    var currentDay: Day? {
-        didSet {
-            guard let day = currentDay else { return }
-            self.currentDayVM = DayViewModel(day: day)
-        }
-    }
-    
-    var currentDayVM: DayViewModel? {
-        didSet {
-            on.main {
-                self.configureTableView()
-            }
+    func populate(site: Site) {
+        let siteVM = SiteViewModel(site: site)
+        self.siteTitle.text = siteVM.siteName
+        self.forecast = self.site!.forecast
+        
+        guard let forecast = self.forecast else { return }
+        self.forecastVM = DetailedForecastViewModel(forecast: forecast)
+        
+        guard let forecastVM = self.forecastVM else { return }
+        self.currentDay = forecastVM.days[0]
+        self.configureCollectionView()
+        
+        guard let day = currentDay else { return }
+        self.currentDayVM = DayViewModel(day: day)
+        
+        on.main {
+            self.configureTableView()
         }
     }
     
@@ -148,5 +128,4 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.tableView.reloadData()
         }
     }
-    
 }

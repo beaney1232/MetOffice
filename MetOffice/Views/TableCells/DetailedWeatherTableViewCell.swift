@@ -59,7 +59,7 @@ class DetailedWeatherTableViewCell: UITableViewCell, UICollectionViewDelegate, U
         self.collectionView.register(nib, forCellWithReuseIdentifier: "cell")
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        self.currentTimeStep = dayVM.timeSteps![0]
+        self.currentTimeStep = dayVM.timeSteps[0]
         self.collectionView.reloadData()
         let indexPath = IndexPath(item: 0, section: 0)
         self.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .left)
@@ -149,7 +149,7 @@ class DetailedWeatherTableViewCell: UITableViewCell, UICollectionViewDelegate, U
         if let customCell: DetailedDayCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? DetailedDayCollectionViewCell {
             customCell.type = self.currentType
             
-            if let timeStep = self.day?.timeSteps![indexPath.row] {
+            if let timeStep = self.day?.timeSteps[indexPath.row] {
                 customCell.timestep = timeStep
             }
             
@@ -166,7 +166,7 @@ class DetailedWeatherTableViewCell: UITableViewCell, UICollectionViewDelegate, U
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.day?.timeSteps?.count ?? 0
+        return self.day?.timeSteps.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

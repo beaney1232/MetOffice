@@ -7,52 +7,53 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Site: NSObject {
-    var siteID: Int?
-    var siteName: String?
-    var latitude: Float?
-    var longitude: Float?
-    var timezone: String?
-    var unitaryAuthority: String?
-    var warningTag: String?
-    var pollenTag: String?
-    var regionID: String?
-    var regionName: String?
-    var links: Dictionary<String, AnyObject>?
-    var snapshot: Snapshot?
-    var forecast: DetailedForecast?
+class Site: Object {
+    var siteID = RealmOptional<Int>()
+    var latitude = RealmOptional<Float>()
+    var longitude = RealmOptional<Float>()
     
-    func test() {
-        let mirror = Mirror(reflecting: self)
-        print(mirror)
-    }
+    dynamic var siteName: String?
+    dynamic var timezone: String?
+    dynamic var unitaryAuthority: String?
+    dynamic var warningTag: String?
+    dynamic var pollenTag: String?
+    dynamic var regionID: String?
+    dynamic var regionName: String?
+    dynamic var links: Links?
+    dynamic var snapshot: Snapshot?
+    dynamic var forecast: DetailedForecast?
     
-    func propertyNames() -> [String] {
-        return Mirror(reflecting: self).children.flatMap { $0.label }
-    }
-    
-    init(json: Dictionary<String, AnyObject>) {
-        siteID = json.intForKey(key: "site_id")
+    convenience init(json: Dictionary<String, AnyObject>) {
+        self.init()
+        siteID.value = json.intForKey(key: "site_id")
+        latitude.value = json.floatForKey(key: "latitude")
+        longitude.value = json.floatForKey(key: "longitude")
+        
         siteName = json.stringForKey(key: "name")
-        latitude = json.floatForKey(key: "latitude")
-        longitude = json.floatForKey(key: "longitude")
+
         timezone = json.stringForKey(key: "timezone")
         unitaryAuthority = json.stringForKey(key: "unitary_authority")
         warningTag = json.stringForKey(key: "warning_tag")
         pollenTag = json.stringForKey(key: "pollen_tag")
         regionID = json.stringForKey(key: "region_id")
         regionName = json.stringForKey(key: "region_name")
-        links = json.dictForKey(key: "links")
+        links = Links(json: json.dictForKey(key: "links"))
+    }
+    
+    override static func primaryKey() -> String? {
+        return "siteID"
     }
 }
 
-struct Links {
-    var detailedForecast: String?
-    var snapshot: String?
-    var outlook: String?
+class Links: Object {
+    dynamic var detailedForecast: String?
+    dynamic var snapshot: String?
+    dynamic var outlook: String?
     
-    init(json: Dictionary<String, AnyObject>?) {
+    convenience init(json: Dictionary<String, AnyObject>?) {
+        self.init()
         guard let json = json else {
             return
         }
@@ -71,7 +72,7 @@ struct SiteViewModel {
     }
     
     var siteIDString: String {
-        return self.site.siteID != nil ? "\(self.site.siteID!)" : ""
+        return self.site.siteID.value != nil ? "\(self.site.siteID.value!)" : ""
     }
     
     var siteName: String {
@@ -79,11 +80,11 @@ struct SiteViewModel {
     }
     
     var latitude: Float {
-        return self.site.latitude ?? 0.0
+        return self.site.latitude.value ?? 0.0
     }
     
     var longitude: Float {
-        return self.site.longitude ?? 0.0
+        return self.site.longitude.value ?? 0.0
     }
     
     var timezone: String {
@@ -94,7 +95,7 @@ struct SiteViewModel {
         return "\(self.site.regionID)"
     }
     
-    var links: Dictionary<String, AnyObject>? {
+    var links: Links? {
         return self.site.links
     }
     

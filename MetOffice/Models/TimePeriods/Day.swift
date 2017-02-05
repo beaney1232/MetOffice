@@ -12,33 +12,24 @@ import RealmSwift
 
 class Day: Object {
     //MARK: SNAPSHOT VARIABLES
-    dynamic var date: Date?
-    dynamic var timeSteps: [TimeStep]?
-    dynamic var sunSetDate: Date?
     dynamic var dayWeatherType: String?
     dynamic var nightWeatherType: String?
+    dynamic var date: Date?
+    dynamic var sunSetDate: Date?
     dynamic var sunRiseDate: Date?
+    let timeSteps = List<TimeStep>()
     
-    var dayActualTemp = RealmOptional<Float>()
-    let sunWillRise = RealmOptional<Bool>()
-    let sunWillSet = RealmOptional<Bool>()
-    let dayFeelsTemp = RealmOptional<Float>()
-    let dayWeatherSymbol = RealmOptional<Int>()
-    let dayAirQualityIndex = RealmOptional<Int>()
+    let dayActualTemp = RealmOptional<Float>()
     let nightActualTemp = RealmOptional<Float>()
     let nightFeelsTemp = RealmOptional<Float>()
-    let nightWeatherSymbol = RealmOptional<Int>()
+    let dayFeelsTemp = RealmOptional<Float>()
     
-    //MARK: DETAILED FORECAST ITEMS
-    var weatherType: String?
-    var windSpeedMS: Float?
-    var windGustMS: Float?
-    var windDirection: String?
-    var uvRating: String?
-    var visibility: String?
-    var visibilityMetre: Int?
-    var humidity: Int?
-    var pressure: Int?
+    let dayWeatherSymbol = RealmOptional<Int>()
+    let dayAirQualityIndex = RealmOptional<Int>()
+    let nightWeatherSymbol = RealmOptional<Int>()
+
+    let sunWillRise = RealmOptional<Bool>()
+    let sunWillSet = RealmOptional<Bool>()
     
     convenience init(json: Dictionary<String, AnyObject>) {
         self.init()
@@ -51,7 +42,6 @@ class Day: Object {
         dayActualTemp.value = json.floatForKey(key: "day_actual_temp_celsius")
         dayFeelsTemp.value = json.floatForKey(key: "day_feels_like_temp_celsius")
         dayWeatherType = json.stringForKey(key: "day_weather_type")
-        dayWeatherSymbol.value = json.intForKey(key: "day_weather_symbol")
         dayAirQualityIndex.value = json.intForKey(key: "day_air_quality_index")
         
         nightActualTemp.value = json.floatForKey(key: "night_actual_temp_celsius")
@@ -60,15 +50,16 @@ class Day: Object {
         nightWeatherSymbol.value = json.intForKey(key: "night_weather_symbol")
         
         if let steps = json.arrayForKey(key: "time_steps") {
-            timeSteps = [TimeStep]()
             for timestep in steps {
+                dayWeatherSymbol.value = timestep.intForKey(key: "weather_symbol")
+                
                 let objTimeStep = TimeStep(json: timestep)
                 
                 if let endDate = objTimeStep.endDate, endDate.isGreaterThanDate(Date()) {
-                    timeSteps?.append(objTimeStep)
+                    timeSteps.append(objTimeStep)
                 }
             }
-        }
+        }        
     }
 }
 
@@ -109,7 +100,7 @@ struct DayViewModel {
         return self.day.date != nil ? dateFormatter.string(from: self.day.date!) : ""
     }
     
-    var timeSteps: [TimeStep]? {
+    var timeSteps: List<TimeStep> {
         return self.day.timeSteps
     }
     

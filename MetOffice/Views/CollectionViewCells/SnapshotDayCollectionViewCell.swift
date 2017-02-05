@@ -62,7 +62,6 @@ class SnapshotDayCollectionViewCell: UICollectionViewCell {
         guard let dayVM = self.dayVM else { return }
         self.timeStamp.text = dayVM.dayDate.uppercased()
         self.weatherIcon.image = dayVM.symbol
-        
     }
     
     override func awakeFromNib() {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var background: UIImageView!
@@ -22,7 +23,8 @@ class HomeViewController: UIViewController {
     }
     
     func populateSites() {
-        ForecastController.shared.subscribeWithBlock(completion: {
+        let realm = try! Realm()
+        let _ = realm.addNotificationBlock { (notification, realm) in
             on.main {
                 let toImage = UIImage(named:"background")
                 UIView.transition(with: self.background,
@@ -34,7 +36,9 @@ class HomeViewController: UIViewController {
                 self.noSitesTitle.alpha = 0.0
                 self.noSitesDescription.alpha = 0.0
                 
-                guard let sites = ForecastController.shared.sites, sites.count > 0 else {
+                let sites = realm.objects(Site.self)
+                
+                guard sites.count > 0 else {
                     self.addButton.tintColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
                     self.animateButton()
                     
@@ -45,7 +49,8 @@ class HomeViewController: UIViewController {
                     return
                 }
             }
-        }, key: "home")
+
+        }
         
         forecastController.requestSites()
     }

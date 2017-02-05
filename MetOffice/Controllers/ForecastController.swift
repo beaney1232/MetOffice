@@ -7,44 +7,33 @@
 //
 
 import Foundation
+import RealmSwift
 
 class ForecastController: DataStore {
     static var shared = ForecastController()
-    
-    var sites: [Site]? {
-        didSet {
-            if let sites = self.sites, sites.count > 0 {
-                self.storeSiteData(sites: sites)
-            }
-            informSubscribers()
-        }
-    }
     
     func requestSiteForSearch(searchResult: SearchResult) {
         let searchVM = SearchResultViewModel(searchResult: searchResult)
         let queue = OperationQueue()
         let siteOp = SiteOperation(lat: searchVM.lat, long: searchVM.long) { site in
-            guard let site = site, self.sites != nil else {
+            guard let site = site else {
                 return
             }
             
-            self.sites!.append(site)
-            self.informSubscribers()
+            let realm = try! Realm()
+            try! realm.write {
+                realm.add(site, update: true)
+            }
         }
         
         queue.addOperation(siteOp)
     }
     
     func requestSites() {
-        guard let oldSites = fetchSites() else {
-            self.sites = [Site]()
-            return
-        }
-        
+        let oldSites = fetchSites()
         var sites = [Site]()
     
         if !shouldUpdate() {
-            self.sites = fetchSites()
             return
         }
         
@@ -53,7 +42,11 @@ class ForecastController: DataStore {
         
         //This will be the completion block once the queue is complete. The other operations will be building up a list of sites, once they are complete this will fire.
         let endOp: SiteOperation = SiteOperation(lat: nil, long: nil, completion: { (site) in
-            self.sites = sites
+            guard let site = site else { return }
+            let realm = try! Realm()
+            try! realm.write {
+                realm.add(site, update: true)
+            }
         })
         
         for site in oldSites {
@@ -90,19 +83,17 @@ class ForecastController: DataStore {
     }
     
     //MARK: DATA DISK FUNCTIONS
-    func fetchSites() -> [Site]? {
-        if  let siteData: Data = UserDefaults.standard.object(forKey: DiskConstants.SiteConstants.site.rawValue) as? Data,
-            let sites: [Site] = NSKeyedUnarchiver.unarchiveObject(with: siteData) as? [Site] {
-            return sites
+    func fetchSites() -> [Site] {
+        let realm = try! Realm()
+        let sites: [Site] = realm.objects(Site.self).map { (site) -> Site in
+            site
         }
         
-        return nil
+        return sites
     }
     
     func storeSiteData(sites: [Site]) {
         storeLastUpdated()
-        let siteData: Data = NSKeyedArchiver.archivedData(withRootObject: sites)
-        UserDefaults.standard.set(siteData, forKey: DiskConstants.SiteConstants.site.rawValue)
     }
 }
 
@@ -143,8 +134,8 @@ class SiteOperation: Operation {
             let site = Site(json: data)
             let siteVM = SiteViewModel(site: site)
             
-            let snapshotURL = siteVM.links?.stringForKey(key: "snapshot")
-            let forecastURL = siteVM.links?.stringForKey(key: "detailed_forecast")
+            let snapshotURL = siteVM.links?.snapshot
+            let forecastURL = siteVM.links?.snapshot
             
             //Create the operations to fetch the forecasts.
             let queue = OperationQueue()

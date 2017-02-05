@@ -25,6 +25,13 @@ class SnapshotTableViewCell: UICollectionViewCell, UICollectionViewDelegate, UIC
         }
     }
     
+    var site: Site? {
+        didSet {
+            guard let site = self.site else { return }
+            self.siteVM = SiteViewModel(site: site)
+        }
+    }
+    
     var forecast: ForecastViewModel? {
         didSet {
             let nib: UINib = UINib(nibName: "SnapshotDayCollectionViewCell", bundle: nil)
