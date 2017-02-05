@@ -8,7 +8,7 @@
 
 import XCTest
 @testable import MetOffice
-
+import RealmSwift
 
 class HomeTests: XCTestCase {
     
@@ -16,6 +16,11 @@ class HomeTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.deleteAll()
+        }
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         homeVC = storyboard.instantiateViewController(withIdentifier: "Home") as? HomeViewController
@@ -35,13 +40,24 @@ class HomeTests: XCTestCase {
     }
     
     func testHomeLabelCorrectWhenNoSites() {
-        (homeVC?.forecastController as! MockForecastController).noSites = false
+        (homeVC?.forecastController as! MockForecastController).noSites = true
         homeVC?.populateSites()
         let label = homeVC?.noSitesTitle.text
         let secondLabel = homeVC?.noSitesDescription.text
         
         XCTAssert(label == "No sites selected")
         XCTAssert(secondLabel == "Tap the plus button to add a location")
+        
+        let asyncExpectation = expectation(description: "requestSitesTest")
+        
+        on.delay(3.0) { 
+            asyncExpectation.fulfill()
+        }
+        
+        self.waitForExpectations(timeout: 30) { error in
+            print(self.homeVC?.noSitesTitle.alpha)
+            XCTAssert(self.homeVC?.noSitesTitle.alpha == 1.0)
+        }
     }
     
     func testHomeLabelsInvisibleWithSites() {
@@ -58,9 +74,11 @@ class HomeTests: XCTestCase {
         var noSites = false
         override func requestSites() {
             if noSites {
-                self.sites = []
+                let realm = try! Realm()
+                try! realm.write {
+                    realm.deleteAll()
+                }
             } else {
-                
                 //Mock site data from JSON.
                 do {
                     let filePath = Bundle.main.path(forResource: "MockSiteData" ,ofType:"json")
@@ -68,14 +86,15 @@ class HomeTests: XCTestCase {
                     if let json = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? Dictionary<String, AnyObject> {
                         if let dict = json.dictForKey(key: "data") {
                             let site = Site(json: dict)
-                            self.sites = [site]
+                            let realm = try! Realm()
+                            try! realm.write {
+                                realm.add(site, update: true)
+                            }
                         }
                     }
                 } catch {
                     
                 }
-
-                self.sites = []
             }
         }
     }

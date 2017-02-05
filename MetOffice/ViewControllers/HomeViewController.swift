@@ -15,6 +15,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var noSitesDescription: UILabel!
     @IBOutlet weak var addButton: UIButton!
     public var forecastController: ForecastController = ForecastController.shared
+    
+    var token: NotificationToken?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,7 @@ class HomeViewController: UIViewController {
     
     func populateSites() {
         let realm = try! Realm()
-        let _ = realm.addNotificationBlock { (notification, realm) in
+        token = realm.addNotificationBlock { (notification, realm) in
             on.main {
                 let toImage = UIImage(named:"background")
                 UIView.transition(with: self.background,

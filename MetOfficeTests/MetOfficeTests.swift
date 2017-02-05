@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import MetOffice
+import RealmSwift
 
 class MetOfficeTests: XCTestCase {
     
@@ -40,10 +41,11 @@ class MetOfficeTests: XCTestCase {
         ForecastController.shared.requestSites()
         
         self.waitForExpectations(timeout: 30) { error in
-            XCTAssert(ForecastController.shared.sites != nil, "Sites nil, something went wrong with requesting sites.")
-            XCTAssert(ForecastController.shared.sites!.count > 0, "Sites array is empty, test case not set up properly")
+            let realm = try! Realm()
+            let sites = realm.objects(Site.self)
+            XCTAssert(sites.count > 0, "Sites array is empty, test case not set up properly")
             
-            for site in ForecastController.shared.sites! {
+            for site in sites {
                 XCTAssert(site.snapshot != nil, "A snapshot was nil, something went wrong with the download.")
                 XCTAssert(site.forecast != nil, "A forecast was nil, something went wrong with the download.")
             }
