@@ -14,43 +14,50 @@ class Day: Object {
     //MARK: SNAPSHOT VARIABLES
     dynamic var date: Date?
     dynamic var timeSteps: [TimeStep]?
-    
-    //I hope the next two variables are always true.
-    var sunWillRise = RealmOptional<Bool>()
-    var sunWillSet = RealmOptional<Bool>()
-    dynamic var sunRiseDate: Date?
     dynamic var sunSetDate: Date?
+    dynamic var dayWeatherType: String?
+    dynamic var nightWeatherType: String?
+    dynamic var sunRiseDate: Date?
     
     var dayActualTemp = RealmOptional<Float>()
-    var dayFeelsTemp = RealmOptional<Float>()
-    dynamic var dayWeatherType: String?
-    var dayWeatherSymbol = RealmOptional<Int>()
-    var dayAirQualityIndex = RealmOptional<Int>()
+    let sunWillRise = RealmOptional<Bool>()
+    let sunWillSet = RealmOptional<Bool>()
+    let dayFeelsTemp = RealmOptional<Float>()
+    let dayWeatherSymbol = RealmOptional<Int>()
+    let dayAirQualityIndex = RealmOptional<Int>()
+    let nightActualTemp = RealmOptional<Float>()
+    let nightFeelsTemp = RealmOptional<Float>()
+    let nightWeatherSymbol = RealmOptional<Int>()
     
-    var nightActualTemp = RealmOptional<Float>()
-    var nightFeelsTemp = RealmOptional<Float>()
-    dynamic var nightWeatherType: String?
-    var nightWeatherSymbol = RealmOptional<Int>()
+    //MARK: DETAILED FORECAST ITEMS
+    var weatherType: String?
+    var windSpeedMS: Float?
+    var windGustMS: Float?
+    var windDirection: String?
+    var uvRating: String?
+    var visibility: String?
+    var visibilityMetre: Int?
+    var humidity: Int?
+    var pressure: Int?
     
-    init(json: Dictionary<String, AnyObject>) {
-        
-        
+    convenience init(json: Dictionary<String, AnyObject>) {
+        self.init()
         date = MBDateFormatter.parseDateShort(date: json.stringForKey(key: "date"))
-        sunWillRise = R.bool(json.boolForKey(key: "sun_will_rise"))
-        sunWillSet = R.bool(json.boolForKey(key: "sun_will_set"))
+        sunWillRise.value = json.boolForKey(key: "sun_will_rise")
+        sunWillSet.value = json.boolForKey(key: "sun_will_set")
         sunRiseDate = MBDateFormatter.parseDateLong(date: json.stringForKey(key: "sunrise_datetime"))
         sunSetDate = MBDateFormatter.parseDateLong(date: json.stringForKey(key: "sunset_datetime"))
         
-        dayActualTemp = R.float(json.floatForKey(key: "day_actual_temp_celsius"))
-        dayFeelsTemp = R.float(json.floatForKey(key: "day_feels_like_temp_celsius"))
+        dayActualTemp.value = json.floatForKey(key: "day_actual_temp_celsius")
+        dayFeelsTemp.value = json.floatForKey(key: "day_feels_like_temp_celsius")
         dayWeatherType = json.stringForKey(key: "day_weather_type")
-        dayWeatherSymbol = R.int(json.intForKey(key: "day_weather_symbol"))
-        dayAirQualityIndex = R.int(json.intForKey(key: "day_air_quality_index"))
+        dayWeatherSymbol.value = json.intForKey(key: "day_weather_symbol")
+        dayAirQualityIndex.value = json.intForKey(key: "day_air_quality_index")
         
-        nightActualTemp = R.float(json.floatForKey(key: "night_actual_temp_celsius"))
-        nightFeelsTemp = R.float(json.floatForKey(key: "night_feels_like_temp_celsius"))
+        nightActualTemp.value = json.floatForKey(key: "night_actual_temp_celsius")
+        nightFeelsTemp.value = json.floatForKey(key: "night_feels_like_temp_celsius")
         nightWeatherType = json.stringForKey(key: "night_weather_type")
-        nightWeatherSymbol = R.int(json.intForKey(key: "night_weather_symbol"))
+        nightWeatherSymbol.value = json.intForKey(key: "night_weather_symbol")
         
         if let steps = json.arrayForKey(key: "time_steps") {
             timeSteps = [TimeStep]()
@@ -77,11 +84,11 @@ struct DayViewModel {
     }
     
     var dayActual: String {
-        return day.dayActualTemp != nil ? "\(Int(day.dayActualTemp!))°C" : "-"
+        return day.dayActualTemp.value != nil ? "\(Int(day.dayActualTemp.value!))°C" : "-"
     }
     
     var nightActual: String {
-        return day.nightActualTemp != nil ? "\(Int(day.nightActualTemp!))°C" : "-"
+        return day.nightActualTemp.value != nil ? "\(Int(day.nightActualTemp.value!))°C" : "-"
     }
     
     var longDate: String {
@@ -107,7 +114,7 @@ struct DayViewModel {
     }
     
     var symbol: UIImage? {
-        if let symbolID = self.day.dayWeatherSymbol, let image = UIImage(named: String(symbolID)) {
+        if let symbolID = self.day.dayWeatherSymbol.value, let image = UIImage(named: String(symbolID)) {
             return image
         } else {
             return UIImage(named: "")

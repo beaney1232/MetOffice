@@ -7,12 +7,19 @@
 //
 
 import Foundation
+import RealmSwift
 
-class DetailedForecast: Forecast {
+class DetailedForecast: Object, Forecast {
     var issuedDate: Date?
+    var days: List<Day> = List<Day>()
     
-    override init(json: Dictionary<String, AnyObject>) {
-        super.init(json: json)
+    convenience init(json: Dictionary<String, AnyObject>) {
+        self.init()
+        configure(json: json)
+    }
+    
+    func configure(json: Dictionary<String, AnyObject>) {
+        self.configureBase(json: json)
         issuedDate = MBDateFormatter.parseDateLong(date: json.stringForKey(key: "issued_date"))
     }
 }

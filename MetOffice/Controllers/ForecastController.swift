@@ -150,7 +150,7 @@ class SiteOperation: Operation {
             let queue = OperationQueue()
             
             let snapshotOp = ForecastOperation(type: "snapshot", url: snapshotURL, completion: { (forecast) in
-                guard let forecast = forecast as? Forecast else { return }
+                guard let forecast = forecast as? Snapshot else { return }
                 site.snapshot = forecast
             })
             
@@ -201,7 +201,7 @@ class ForecastOperation: Operation {
             
             switch type {
             case "snapshot":
-                let forecast = Forecast(json: data)
+                let forecast = Snapshot(json: data)
                 self.completion(forecast)
                 break
             case "detailed":

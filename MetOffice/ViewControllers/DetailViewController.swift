@@ -123,7 +123,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //MARK: COLLECTION VIEW DELEGATES
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.forecast?.days?.count ?? 0
+        return self.forecast?.days.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

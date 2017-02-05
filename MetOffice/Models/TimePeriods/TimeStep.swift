@@ -8,8 +8,9 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
-class TimeStep: NSObject, NSCoding {
+class TimeStep: Object {
     //MARK: SNAPSHOP VARIABLES
     var feelsTemp: Float?
     var actualTemp: Float?
@@ -30,8 +31,9 @@ class TimeStep: NSObject, NSCoding {
     var humidity: Int?
     var pressure: Int?
     
-    init(json: Dictionary<String, AnyObject>) {
+    convenience init(json: Dictionary<String, AnyObject>) {
         //SNAPSHOT VARIABLES
+        self.init()
         startDate = MBDateFormatter.parseDateLong(date: json.stringForKey(key: "datetime_start"))
         endDate = MBDateFormatter.parseDateLong(date: json.stringForKey(key: "datetime_end"))
         feelsTemp = json.floatForKey(key: "feels_like_temp_celsius")
@@ -49,43 +51,6 @@ class TimeStep: NSObject, NSCoding {
         visibilityMetre = json.intForKey(key: "visibility_metre")
         humidity = json.intForKey(key: "humidity")
         pressure = json.intForKey(key: "pressure_hpa")
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        feelsTemp = aDecoder.decodeObject(forKey: "feelsTemp") as? Float
-        actualTemp = aDecoder.decodeObject(forKey: "actualTemp") as? Float
-        precipProbString = aDecoder.decodeObject(forKey: "precipProbString") as? String
-        precipProb = aDecoder.decodeObject(forKey: "precipProb") as? Int
-        symbolID = aDecoder.decodeObject(forKey: "symbolID") as? Int
-        startDate = aDecoder.decodeObject(forKey: "startDate") as? Date
-        endDate = aDecoder.decodeObject(forKey: "endDate") as? Date
-        weatherType = aDecoder.decodeObject(forKey: "weatherType") as? String
-        windSpeedMS = aDecoder.decodeObject(forKey: "windSpeedMS") as? Float
-        windGustMS = aDecoder.decodeObject(forKey: "windGustMS") as? Float
-        windDirection = aDecoder.decodeObject(forKey: "windDirection") as? String
-        uvRating = aDecoder.decodeObject(forKey: "uvRating") as? String
-        visibility = aDecoder.decodeObject(forKey: "visibility") as? String
-        visibilityMetre = aDecoder.decodeObject(forKey: "visibilityMetre") as? Int
-        humidity = aDecoder.decodeObject(forKey: "humidity") as? Int
-        pressure = aDecoder.decodeObject(forKey: "pressure") as? Int
-    }
-    
-    func encode(with coder: NSCoder) {
-        coder.encode(self.feelsTemp , forKey: "feelsTemp")
-        coder.encode(self.actualTemp, forKey: "actualTemp")
-        coder.encode(self.precipProbString, forKey: "precipProbString")
-        coder.encode(self.precipProb, forKey: "precipProb")
-        coder.encode(self.symbolID, forKey: "symbolID")
-        coder.encode(self.startDate, forKey: "startDate")
-        coder.encode(self.endDate, forKey: "endDate")
-        coder.encode(self.weatherType, forKey: "weatherType")
-        coder.encode(self.windSpeedMS, forKey: "windSpeedMS")
-        coder.encode(self.windGustMS, forKey: "windGustMS")
-        coder.encode(self.windDirection, forKey: "windDirection")
-        coder.encode(self.uvRating, forKey: "uvRating")
-        coder.encode(self.visibility, forKey: "visibility")
-        coder.encode(self.humidity, forKey: "humidity")
-        coder.encode(self.pressure, forKey: "pressure")
     }
 }
 

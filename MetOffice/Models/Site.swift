@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Site: NSObject, NSCoding {
+class Site: NSObject {
     var siteID: Int?
     var siteName: String?
     var latitude: Float?
@@ -20,7 +20,7 @@ class Site: NSObject, NSCoding {
     var regionID: String?
     var regionName: String?
     var links: Dictionary<String, AnyObject>?
-    var snapshot: Forecast?
+    var snapshot: Snapshot?
     var forecast: DetailedForecast?
     
     func test() {
@@ -44,38 +44,6 @@ class Site: NSObject, NSCoding {
         regionID = json.stringForKey(key: "region_id")
         regionName = json.stringForKey(key: "region_name")
         links = json.dictForKey(key: "links")
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        siteID = aDecoder.decodeObject(forKey: "siteID") as? Int
-        siteName = aDecoder.decodeObject(forKey: "siteName") as? String
-        latitude = aDecoder.decodeObject(forKey: "latitude") as? Float
-        longitude = aDecoder.decodeObject(forKey: "longitude") as? Float
-        timezone = aDecoder.decodeObject(forKey: "timezone") as? String
-        unitaryAuthority = aDecoder.decodeObject(forKey: "unitaryAuthority") as? String
-        warningTag = aDecoder.decodeObject(forKey: "warningTag") as? String
-        pollenTag = aDecoder.decodeObject(forKey: "pollenTag") as? String
-        regionID = aDecoder.decodeObject(forKey: "regionID") as? String
-        regionName = aDecoder.decodeObject(forKey: "regionName") as? String
-        links = aDecoder.decodeObject(forKey: "links") as? Dictionary<String, AnyObject>
-        snapshot = aDecoder.decodeObject(forKey: "snapshot") as? Forecast
-        forecast = aDecoder.decodeObject(forKey: "forecast") as? DetailedForecast
-    }
-    
-    func encode(with coder: NSCoder) {
-        coder.encode(self.siteID , forKey: "siteID")
-        coder.encode(self.siteName, forKey: "siteName")
-        coder.encode(self.latitude, forKey: "latitude")
-        coder.encode(self.longitude, forKey: "longitude")
-        coder.encode(self.timezone, forKey: "timezone")
-        coder.encode(self.unitaryAuthority, forKey: "unitaryAuthority")
-        coder.encode(self.warningTag, forKey: "warningTag")
-        coder.encode(self.pollenTag, forKey: "pollenTag")
-        coder.encode(self.regionID, forKey: "regionID")
-        coder.encode(self.regionName, forKey: "regionName")
-        coder.encode(self.links, forKey: "links")
-        coder.encode(self.snapshot, forKey: "snapshot")
-        coder.encode(self.forecast, forKey: "forecast")
     }
 }
 
@@ -130,7 +98,7 @@ struct SiteViewModel {
         return self.site.links
     }
     
-    var snapshot: Forecast? {
+    var snapshot: Snapshot? {
         return self.site.snapshot
     }
     
